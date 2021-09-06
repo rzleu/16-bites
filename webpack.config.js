@@ -9,6 +9,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '*'],
+    alias: {
+      Images: path.resolve(__dirname, 'app', 'assets', 'images'),
+      Components: path.resolve(__dirname, 'frontend', 'components'),
+    },
   },
   module: {
     rules: [
@@ -21,6 +25,10 @@ module.exports = {
             presets: ['@babel/env', '@babel/react'],
           },
         },
+      },
+      {
+        test: /\.svg/,
+        use: ['@svgr/webpack'],
       },
     ],
   },

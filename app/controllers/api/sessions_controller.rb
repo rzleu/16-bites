@@ -4,7 +4,6 @@ class Api::SessionsController < ApplicationController
     # debugger
       @user = User.find_by_credentials(
         params[:user][:email],
-        params[:user][:username],
         params[:user][:password]
       )
       if @user

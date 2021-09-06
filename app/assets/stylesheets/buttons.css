@@ -1,0 +1,52 @@
+button {
+  border: 0;
+}
+
+.log .nav--button {
+  color: black;
+}
+
+.nav--button:hover {
+  color: rgb(41, 134, 247);
+}
+
+.auth--btn {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background-color: rgb(8, 112, 209);
+  border-color: rgb(8, 112, 209);
+  font-weight: 700;
+  line-height: 20px;
+  border-radius: 28px;
+  max-height: 48px;
+  text-align: center;
+  padding: 12px 22px;
+  width: 100%;
+}
+
+.auth--btn:hover {
+  border-color: rgb(82, 155, 223);
+  background-color: rgb(82, 155, 223);
+}
+
+.login-nav-btn {
+  color: black;
+  font-weight: 700;
+  margin-left: 16px;
+}
+
+.login-nav-btn:hover,
+.signup-nav-btn:hover {
+  color: #096dd9;
+}
+
+.signup-nav-btn {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  margin-left: 16px;
+  border: 2px solid black;
+  border-radius: 100px;
+  padding: 0.4em 0.7em;
+  /* line-height: 16px; */
+}

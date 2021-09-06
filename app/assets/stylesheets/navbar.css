@@ -37,6 +37,7 @@ nav ul {
   right: 0;
   overflow: hidden;
   padding: 0 5%;
+  padding-left: 8.5%;
 }
 
 .nav--bar {
@@ -65,15 +66,18 @@ nav ul {
 }
 
 .logo {
-  width: 100%;
-  height: 100%;
-  fill: rgb(8, 112, 209);
-  color: rgb(8, 112, 209);
-  postition: absolute;
+  /* width: 100%;
+  height: 100%; */
+  /* fill: rgb(8, 112, 209);
+  color: rgb(8, 112, 209); */
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  /* overflow: hidden; */
 }
 
-.logo:hover {
+/* .logo:hover {
   color: rgb(8, 112, 209);
   background-color: rgb(255, 255, 255);
   fill: rgb(8, 112, 209);
-}
+} */

@@ -12,8 +12,8 @@ export default function Navbar() {
         <div className='nav--left'>
           <ul>
             <li className='logo nav--item logo--wrapper'>
-              <Link to='/'>
-                <Logo className='logo' />
+              <Link to='/' className='logo'>
+                <Logo />
               </Link>
             </li>
 

@@ -357,3 +357,9 @@ template {
   font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, FreeSans, Arial,
     sans-serif;
 }
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

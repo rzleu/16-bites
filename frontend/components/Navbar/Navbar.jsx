@@ -1,19 +1,38 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
+import {logout} from '../../actions/sessionsActions';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faArrowUp} from '@fortawesome/free-solid-svg-icons';
+// @ts-ignore
 import Logo from 'Images/logo.svg';
 
 export default function Navbar() {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  // @ts-ignore
   const currUserId = useSelector((state) => state.session.id);
-  console.log(currUserId);
+
+  function handleLogout() {
+    dispatch(() => dispatch(logout()));
+    history.push('/');
+  }
+
   return (
     <div className='nav--wrapper'>
       <nav className='nav--bar'>
         <div className='nav--left'>
           <ul>
-            <li className='logo nav--item logo--wrapper'>
+            <li className='nav--item logo--wrapper'>
               <Link to='/' className='logo'>
-                <Logo />
+                <Logo
+                  style={{
+                    height: 'inherit',
+                    position: 'relative',
+                    bottom: '10px',
+                  }}
+                />
               </Link>
             </li>
 
@@ -51,7 +70,7 @@ export default function Navbar() {
         </div>
 
         <div className='nav--right'>
-          {!currUserId && (
+          {!currUserId ? (
             <>
               <Link to='/login' className='login-nav-btn'>
                 Log In
@@ -59,6 +78,20 @@ export default function Navbar() {
               <Link to='/signup' className='signup-nav-btn'>
                 Sign Up
               </Link>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={() => handleLogout()}
+                className='nav--button signup-nav-btn'
+              >
+                Log out
+              </button>
+
+              <button className='nav--button upload--btn'>
+                <FontAwesomeIcon icon={faArrowUp} className='btn--icon' />
+                <span>Upload</span>
+              </button>
             </>
           )}
         </div>

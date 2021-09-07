@@ -14,7 +14,7 @@ const logoutCurrUser = () => ({
 });
 
 const receiveErrors = (errors) => ({
-  type: RECEIVE_ALL_ERRORS,
+  type: RECEIVE_ERRORS,
   errors,
 });
 

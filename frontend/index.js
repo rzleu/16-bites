@@ -3,17 +3,25 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import App from './App';
 import configureStore from './store';
-import {BrowserRouter} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 
 document.addEventListener('DOMContentLoaded', () => {
+  let preloadedState = undefined;
+  if (window.currentUser) {
+    preloadedState = {
+      session: {
+        id: window.currentUser.id,
+      },
+    };
+  }
   const root = document.getElementById('root');
-  const store = configureStore();
+  const store = configureStore(preloadedState);
 
   ReactDOM.render(
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </Provider>,
     root,
   );

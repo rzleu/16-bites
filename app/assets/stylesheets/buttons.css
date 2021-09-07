@@ -2,8 +2,11 @@ button {
   border: 0;
 }
 
-.log .nav--button {
+.log,
+.nav--button {
+  cursor: pointer;
   color: black;
+  background-color: transparent;
 }
 
 .nav--button:hover {
@@ -40,7 +43,8 @@ button {
   color: #096dd9;
 }
 
-.signup-nav-btn {
+.signup-nav-btn,
+.upload--btn {
   font-size: 1rem;
   font-weight: bold;
   color: black;
@@ -49,4 +53,39 @@ button {
   border-radius: 100px;
   padding: 0.4em 0.7em;
   /* line-height: 16px; */
+}
+
+.signup-nav-btn:active {
+  background-color: rgb(13, 96, 174);
+  border-color: rgb(13, 96, 174);
+  color: rgb(255, 255, 255);
+}
+
+.demo--btn {
+  margin-top: 0.5rem;
+  /* max-width: 270px; */
+  width: 25%;
+}
+
+.btn--icon {
+  margin-right: 5px;
+}
+
+.upload--btn {
+  max-height: 48px;
+  min-width: 124px;
+  text-align: center;
+  padding: 10px 22px 10px 14px;
+}
+
+.upload--btn:hover {
+  color: rgb(34, 34, 34);
+  background-color: rgb(233, 233, 233);
+  border-color: rgb(34, 34, 34);
+}
+
+.upload--btn:active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(34, 34, 34);
+  border-color: rgb(69, 69, 69);
 }

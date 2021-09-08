@@ -43,7 +43,7 @@ function Signup() {
   const demoSubmit = () => {
     dispatch(
       login({
-        email: 'demo_user@demo.com',
+        login: 'demo_user@demo.com',
         password: 'demodemodemo',
       }),
     );

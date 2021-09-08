@@ -22,6 +22,7 @@ function Root() {
           <h2 className='splash--header--secondary'>
             <span>What makes us different</span>
           </h2>
+          <h4>WORK PLEASE</h4>
 
           <div className='splash--content-one'>
             <FontAwesomeIcon icon={faLeaf} style={{fontSize: '60px'}} />

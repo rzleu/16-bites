@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {login} from '../../actions/sessionsActions';
+import Errors from '../Errors';
 
 function Login() {
+  const errors = useSelector((state) => state.errors);
   const [loginCreds, setCreds] = useState({
     login: '',
     password: '',
@@ -16,6 +18,7 @@ function Login() {
 
   return (
     <section className='login--section'>
+      <Errors errors={errors} />
       <div className='login--wrapper'>
         <h2 className='auth--header'>Log in to 500px</h2>
         <form onSubmit={handleSubmit}>

@@ -20,6 +20,6 @@ export const logout = () =>
 
 export const checkEmailUniquess = (email) =>
   $.ajax({
-    url: `/api/session/validate_email?email=${email}`,
+    url: `/api/users/validate_email_uniqueness?email=${email}`,
     method: 'GET',
   });

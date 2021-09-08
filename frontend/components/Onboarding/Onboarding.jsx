@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {signup, RECEIVE_CURR_USER} from '../../actions/sessionsActions';
 import {useHistory} from 'react-router-dom';
-import {renderErrors} from '../../utils/renderErrors';
+import Errors from '../Errors';
 
 function Onboarding(props) {
   const {push, location} = useHistory();
@@ -42,7 +42,7 @@ function Onboarding(props) {
       <div className='login--wrapper'>
         <h2>Welcome to 500px. Let’s get to know you a little.</h2>
         <form onSubmit={handleSubmit}>
-          {renderErrors(errors)}
+          <Errors errors={errors} />
           <label htmlFor='fname' className='login--label'>
             First name
           </label>

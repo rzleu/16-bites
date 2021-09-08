@@ -1,0 +1,14 @@
+.errors--wrapper {
+  color: #ff0033;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: bold;
+  gap: 8px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 17%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}

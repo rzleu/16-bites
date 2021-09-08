@@ -19,13 +19,14 @@ function Root() {
             Sign Up
           </Link>
 
-          <h2>
+          <h2 className='splash--header--secondary'>
             <span>What makes us different</span>
           </h2>
 
           <div className='splash--content-one'>
-            <FontAwesomeIcon icon={faChartLine} />
-            <h3>Grow as a photographer</h3>
+            <FontAwesomeIcon icon={faLeaf} style={{fontSize: '60px'}} />
+
+            <h3 className='splash--header-two'>Grow as a photographer</h3>
             <p>
               With Statistics and Pulse you get valuable insights into how your
               photos are performing and how you rank in comparison to other
@@ -34,8 +35,9 @@ function Root() {
           </div>
 
           <div className='splash--content-two'>
-            <FontAwesomeIcon icon={faLeaf} />
-            <h3>Build your career</h3>
+            <FontAwesomeIcon icon={faChartLine} style={{fontSize: '60px'}} />
+
+            <h3 className='splash--header-two'>Build your career</h3>
             <p>
               Get immediate exposure with your first upload. Our Pulse algorithm
               surfaces new photographs and photographers, ensuring your photos
@@ -45,8 +47,8 @@ function Root() {
           </div>
 
           <div className='splash--content-three'>
-            <FontAwesomeIcon icon={faTools} />
-            <h3>See how you're performing</h3>
+            <FontAwesomeIcon icon={faTools} style={{fontSize: '60px'}} />
+            <h3 className='splash--header-two'>See how you're performing</h3>
             <p>
               Present yourself as a professional. Display your Services, create
               a Directory listing and get hired, showcase your articles,

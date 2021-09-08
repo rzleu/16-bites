@@ -51,6 +51,7 @@
   font-size: 1.125rem;
   grid-column: 11/30;
   grid-row: 5 / 9;
+  margin-top: -10px;
 }
 
 .root--sign-up {
@@ -69,6 +70,7 @@
   display: grid;
   place-items: center;
   z-index: 10;
+  margin-top: -20px;
 }
 
 .root--sign-up:hover {
@@ -94,4 +96,16 @@
 
 .splash--content-three {
   grid-column: 31/39;
+}
+
+.splash--header-two {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.splash--header--secondary {
+  grid-column: 20 / 33;
+  grid-row: 8 / 10;
+  font-size: 2.35rem;
+  margin-top: -3px;
 }

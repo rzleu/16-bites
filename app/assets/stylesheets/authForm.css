@@ -7,6 +7,7 @@ form {
 .login--wrapper {
   align-items: center;
   flex: 1 0 600px;
+  position: relative;
 }
 
 .login--section {

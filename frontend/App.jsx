@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Onboarding from './components/Onboarding';
+import Root from './components/Root';
 
 function App() {
   return (
@@ -27,10 +28,8 @@ function App() {
         <Route path='/onboarding' component={Onboarding}></Route>
         <Route path='/login' component={Login}></Route>
         <Route path='/signup' component={Signup}></Route>
+        <Route path='/' component={Root}></Route>
       </Switch>
-
-      {/* <div id='background' />
-      <div className='curve' /> */}
     </>
   );
 }

@@ -22,5 +22,4 @@ class Api::SessionsController < ApplicationController
           render json: ['no users'], status: :not_found
       end
   end
-
 end

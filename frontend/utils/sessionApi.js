@@ -17,3 +17,9 @@ export const logout = () =>
     url: '/api/session',
     method: 'delete',
   });
+
+export const checkEmailUniquess = (email) =>
+  $.ajax({
+    url: `/api/session/validate_email?email=${email}`,
+    method: 'GET',
+  });

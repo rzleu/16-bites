@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
-import {signup} from '../../actions/sessionsActions';
+import {useDispatch, useSelector} from 'react-redux';
+import {signup, RECEIVE_CURR_USER} from '../../actions/sessionsActions';
 import {useHistory} from 'react-router-dom';
+import {renderErrors} from '../../utils/renderErrors';
 
 function Onboarding(props) {
   const {push, location} = useHistory();
+  const errors = useSelector((state) => state.errors);
   const dispatch = useDispatch();
   const [signupCreds, setCreds] = useState({
     fname: '',
@@ -20,8 +22,19 @@ function Onboarding(props) {
       ...location.state,
     };
     // console.log(request);
+
     dispatch(signup(request));
-    push('/');
+    if (errors.length > 0) {
+      setTimeout(
+        () =>
+          dispatch({
+            type: RECEIVE_CURR_USER,
+          }),
+        1000,
+      );
+    } else {
+      push('/');
+    }
   };
 
   return (
@@ -29,6 +42,7 @@ function Onboarding(props) {
       <div className='login--wrapper'>
         <h2>Welcome to 500px. Let’s get to know you a little.</h2>
         <form onSubmit={handleSubmit}>
+          {renderErrors(errors)}
           <label htmlFor='fname' className='login--label'>
             First name
           </label>

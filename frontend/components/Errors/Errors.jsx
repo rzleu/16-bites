@@ -3,7 +3,6 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
 
 function index({errors}) {
-  console.log(errors);
   return (
     <ul>
       {errors.length > 0 && (

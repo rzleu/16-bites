@@ -1,0 +1,97 @@
+.background {
+  background-image: url('/assets/splash.jpg');
+  background-size: cover;
+  background-position: 100% 0%;
+  max-height: 65vh;
+  width: 100%;
+  position: relative;
+  /* h:a */
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(150% + 1.3px);
+  height: 245px;
+}
+
+.wave .shape-fill {
+  fill: #ffffff;
+}
+
+.root--content {
+  display: grid;
+  grid-template-columns: repeat(50, 1fr);
+  grid-template-rows: repeat(15, 10ch);
+  width: 100%;
+  max-height: 100%;
+}
+
+.root--title {
+  grid-column: 11/28;
+  grid-row: 3 / 5;
+  color: whitesmoke;
+  font-size: 3rem;
+  line-height: 3.125rem;
+  letter-spacing: -0.3px;
+}
+
+.root--para {
+  color: whitesmoke;
+  font-size: 1.125rem;
+  grid-column: 11/30;
+  grid-row: 5 / 9;
+}
+
+.root--sign-up {
+  color: black;
+  background-color: white;
+  font-size: 1.125rem;
+  grid-column: 11/19;
+  grid-row: 6 / 6;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  max-height: 66px;
+  width: 220px;
+  border-color: whitesmoke;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+}
+
+.root--sign-up:hover {
+  background-color: rgb(215, 216, 219);
+  border-color: rgb(215, 216, 219);
+  color: rgb(34, 34, 34);
+}
+
+.splash--content-one,
+.splash--content-two,
+.splash--content-three {
+  max-width: 60ch;
+  grid-row: 9/10;
+}
+
+.splash--content-one {
+  grid-column: 11/19;
+}
+
+.splash--content-two {
+  grid-column: 21/29;
+}
+
+.splash--content-three {
+  grid-column: 31/39;
+}

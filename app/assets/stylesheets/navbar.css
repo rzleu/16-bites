@@ -30,6 +30,7 @@ nav ul {
 }
 
 .nav--wrapper {
+  background-color: whitesmoke;
   max-height: 72px;
   width: 100%;
   position: sticky;
@@ -39,6 +40,7 @@ nav ul {
   overflow: hidden;
   padding: 0 5%;
   padding-left: 4.5%;
+  z-index: 1000;
 }
 
 .nav--bar {

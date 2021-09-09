@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :posts, dependent: :destroy
+
   def self.find_by_credentials(login, password)
     user = User.find_by(email: login) || User.find_by(username: login)
     # debugger

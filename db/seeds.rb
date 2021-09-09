@@ -7,4 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 
-User.create(email: 'demo_user@demo.com', password: 'demodemodemo', fname:'demo', lname:'demopassword', username:'demo_user')
+demo = User.create(email: 'demo_user@demo.com', password: 'demodemodemo', fname:'demo', lname:'demopassword', username:'demo_user')
+
+Post.create!(title: 'Cake', description: 'Chocolately', location: 'NYC', user_id: demo.id)

@@ -1,0 +1,65 @@
+footer {
+  color: rgb(109, 115, 120);
+}
+
+footer h4 {
+  font-size: 1.22rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.footer--wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.footer--wrapper ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer--wrapper li {
+  margin-bottom: 0.75rem;
+}
+
+.footer--wrapper li > svg {
+  margin-right: 5px;
+  width: 16px !important;
+}
+
+.footer--wrapper a {
+  color: inherit;
+}
+
+.footer--wrapper a:hover {
+  color: rgb(41, 134, 247);
+}
+
+.footer--devices-header {
+  margin-bottom: 15px;
+}
+
+.footer--end {
+  list-style-type: none;
+  padding: 0 20rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+  /* position: relative; */
+}
+
+.footer--end::after {
+  content: '';
+  border-top: 1px solid rgb(109, 115, 120);
+  position: absolute;
+  height: 1px;
+  left: 16.5%;
+  right: 16.5%;
+}
+
+.footer--end ul {
+  display: flex;
+  gap: 15px;
+}

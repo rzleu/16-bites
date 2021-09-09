@@ -35,6 +35,7 @@
   grid-template-rows: repeat(15, 10ch);
   width: 100%;
   max-height: 100%;
+  position: relative;
 }
 
 .root--title {
@@ -108,4 +109,171 @@
   grid-row: 8 / 10;
   font-size: 2.35rem;
   margin-top: -3px;
+}
+
+.splash--section-two {
+  grid-column: 11/21;
+  grid-row: 13/19;
+}
+
+.splash--section-two > h2 {
+  font-size: 2rem;
+}
+
+.splash--badges {
+  display: flex;
+  gap: 20px;
+}
+
+.splash--badges > a {
+  position: relative;
+  width: 135px;
+  height: 45px;
+}
+
+.splash--badges svg {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.secondary--content-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.splash--section-four {
+  grid-column: 30/70;
+  grid-row: 55/80;
+  display: grid;
+  place-items: center;
+}
+
+/* =====================================================
+* BANNERS 
+================================================================*/
+.splash--section-three {
+  grid-row: 1/50;
+  background: url('/assets/banner_one.png') 35% 0% / cover no-repeat;
+}
+
+.splash--banner {
+  min-height: 400px;
+  /* display: grid;
+  place-items: center;
+  justify-items: center;
+  gap: -10px; */
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.splash--banner h2,
+.splash--banner h3 {
+  color: white;
+  font-size: 3.75rem;
+  position: absolute;
+  bottom: 5%;
+}
+
+.splash--section-five-banner {
+  background: url('/assets/banner_four.png') 25% 75% / cover no-repeat;
+}
+
+.splash--section-six-banner {
+  background: url('/assets/banner_five.png') center/ cover no-repeat;
+}
+
+.splash--section-seven-banner {
+  background: url('/assets/banner_six.png') center/ cover no-repeat;
+}
+
+.splash--section-eight-banner {
+  background: url('/assets/banner_seven.png') center/ cover no-repeat;
+}
+
+.splash--section-nine {
+  background-color: #45457c;
+}
+
+/** BANNER CONTENT */
+.splash--banner-content {
+  display: grid;
+  place-items: center;
+}
+
+.splash--banner-icon {
+  display: grid;
+  place-items: center;
+  border-radius: 100vh;
+  width: 128px;
+  height: 128px;
+}
+
+/* =================================================================
+ ICONS 
+ ========================================================================== */
+.splash--banner-porfolio-icon,
+.splash--banner-editor-icon,
+.splash--banner-apple-icon,
+.splash--banner-rocket-icon,
+.splash--banner-crown-icon {
+  position: absolute;
+  bottom: 42%;
+  color: whitesmoke;
+}
+
+.splash--banner-editor-icon {
+  background-color: #0cefe8;
+  border: 1px solid#0cefe8;
+
+  color: #181a18;
+}
+
+.splash--banner-porfolio-icon {
+  background-color: #45457c;
+  border: 1px solid#45457c;
+}
+
+.splash--banner-apple-icon {
+  background-color: #3d8459;
+  border: 1px solid #3d8459;
+  position: absolute;
+}
+
+.splash--banner-rocket-icon {
+  background-color: #e44059;
+  border: 1px solid #e44059;
+}
+
+.splash--banner-crown-icon {
+  background-color: #fedf46;
+  border: 1px solid #fedf46;
+
+  color: #181a18;
+}
+
+/* ================================================================= 
+* IMAGES & CURVES
+================================================================*/
+.splash--devices {
+  margin: 20px 0;
+  grid-column: 30 / 50;
+  grid-row: 12 / 40;
+  position: relative;
+  z-index: 2;
+}
+
+.splash--curve-yellow {
+  background: url('/assets/yellow-divider.svg');
+  background-position: right;
+  background-repeat: no-repeat;
+  bottom: -4%;
+  min-height: 400px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
 }

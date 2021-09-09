@@ -6,10 +6,6 @@ a {
   text-decoration: none;
 }
 
-a:visited {
-  color: black;
-}
-
 nav ul {
   display: flex;
   padding: initial;

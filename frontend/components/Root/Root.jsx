@@ -1,7 +1,23 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faChartLine, faLeaf, faTools} from '@fortawesome/free-solid-svg-icons';
+import {
+  faChartLine,
+  faLeaf,
+  faTools,
+  faMedal,
+  faBriefcase,
+  faLemon,
+  faRocket,
+  faTrophy,
+  faPiggyBank,
+  faCrown,
+} from '@fortawesome/free-solid-svg-icons';
+import AppleStore from 'Images/apple_store.svg';
+import GooglePlay from 'Images/google-play-badge.svg';
+import devices from 'Images/devices.png';
+import yellowDivider from 'Images/yellow-divider.svg';
+import Footer from '../Footer';
 
 function Root() {
   return (
@@ -56,8 +72,171 @@ function Root() {
               highlight your work.
             </p>
           </div>
+
+          {/* SECTION 2 */}
+          <section className='splash--section-two'>
+            <h2>Get the App</h2>
+            <p>
+              Join our community of over 16 million like-minded photographers.
+              Download the 500px app for Android and iOS today!
+            </p>
+
+            <div className='splash--badges'>
+              <a href='#'>
+                <GooglePlay />
+              </a>
+              <a href='#'>
+                <AppleStore />
+              </a>
+            </div>
+          </section>
+          <div className='splash--curve-yellow'></div>
+          <div className='splash--devices'>
+            <img
+              src={devices}
+              alt='devices image'
+              style={{maxHeight: '340px', maxWidth: '340px'}}
+            />
+          </div>
         </div>
 
+        {/* OTHER MAIN PARTS */}
+        <div className='secondary--content-wrapper'>
+          {/* SECTION 3 */}
+          <div className='splash--banner splash--section-three'>
+            <div className='splash--banner-icon splash--banner-editor-icon'>
+              <FontAwesomeIcon icon={faMedal} size='4x' />
+            </div>
+            <h2>Editor's Choice</h2>
+          </div>
+
+          {/* SECTION 4 */}
+          <section className='splash--section-four'>
+            <h3>The best of the best</h3>
+            <p>
+              Our editors are always on the lookout for jaw dropping content for
+              you to discover and stay inspired. Check back weekly to see what’s
+              new.
+            </p>
+            <Link
+              to='/editors'
+              className='btn--reverse-color editors-choice-btn'
+            >
+              View Editors' Choice
+            </Link>
+          </section>
+
+          {/* SECTION 5 */}
+          <>
+            <div className='splash--banner splash--section-five-banner'>
+              <div className='splash--banner-icon splash--banner-porfolio-icon '>
+                <FontAwesomeIcon icon={faBriefcase} size='4x' />
+              </div>
+              <h2>Portfolio</h2>
+            </div>
+
+            <div className='splash--banner-content'>
+              <h3>Designed and built for photographers</h3>
+              <p>
+                Create your own high-quality website in minutes. Portfolios
+                allows you to share your work externally so you can build your
+                own brand and market yourself as a professional photographer.
+              </p>
+              <Link
+                to='/portfoliio'
+                className='btn--reverse-color started--btn'
+              >
+                Get Started
+              </Link>
+            </div>
+          </>
+
+          {/* SECTION 6 */}
+          <>
+            <div className='splash--banner splash--section-six-banner'>
+              <div className='splash--banner-icon splash--banner-apple-icon'>
+                <FontAwesomeIcon icon={faLemon} size='4x' />
+              </div>
+              <h2>Resource Hub</h2>
+            </div>
+
+            <div className='splash--banner-content'>
+              <h3>Discover something new</h3>
+              <p>
+                Browse videos, articles, workshops, and presets from 500px users
+                to discover new areas of photography and grow your skills.
+                Become a Pro member to list your Resources in the Hub.
+              </p>
+              <Link to='/portfolio' className='btn--reverse-color started--btn'>
+                View Resource Hub
+              </Link>
+            </div>
+          </>
+
+          {/* SECTION 7 */}
+          <>
+            <div className='splash--banner splash--section-seven-banner'>
+              <div className='splash--banner-icon splash--banner-rocket-icon'>
+                <FontAwesomeIcon icon={faRocket} size='4x' />
+              </div>
+              <h2>Quests</h2>
+            </div>
+
+            <div className='splash--banner-content'>
+              <FontAwesomeIcon icon={faTrophy} />
+              <h3>Take photos. Win prizes.</h3>
+              <p>
+                Quests are creative photo challenges that encourage you to test
+                your skills and submit your best work for a chance to win
+                exciting prizes. We launch new Quests with unique themes every
+                week so there is always something for everyone!
+              </p>
+              <Link to='/portfolio' className='btn--reverse-color started--btn'>
+                View Quests
+              </Link>
+            </div>
+          </>
+
+          {/* SECTION 8 */}
+          <>
+            <div className='splash--banner splash--section-eight-banner'>
+              <div className='splash--banner-icon splash--banner-crown-icon'>
+                <FontAwesomeIcon icon={faCrown} size='4x' />
+              </div>
+              <h2>Licensing</h2>
+            </div>
+
+            <div className='splash--banner-content'>
+              <FontAwesomeIcon icon={faPiggyBank} size='4x' />
+              <h3>Get paid for your photos</h3>
+              <p>
+                Don’t let your photos sit there gathering dust, like on other
+                platforms. Gain exposure and get paid for your work with 500px
+                Licensing. You'll earn 60% royalties (one of the industry's
+                highest rates) when you license your photos exclusively with our
+                global distribution partners.
+              </p>
+              <Link to='/licensing' className='btn--reverse-color started--btn'>
+                Tell me more
+              </Link>
+            </div>
+          </>
+
+          {/* SECTION 8 */}
+          <section className='splash--banner splash--section-nine'>
+            <h2>Join our community today</h2>
+            <p>
+              Do you love photography? Want to constantly stay inspired and be
+              surrounded by millions of like-minded creators? Then sign-up today
+              and get rewarded for your love of photography.
+            </p>
+            <Link to='/signup' className='signup-nav-btn root--sign-up'>
+              Sign up
+            </Link>
+          </section>
+
+          <Footer />
+        </div>
         <div className='wave'>
           <svg
             data-name='Layer 1'

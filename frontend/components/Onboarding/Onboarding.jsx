@@ -12,7 +12,7 @@ function Onboarding(props) {
     fname: '',
     lname: '',
     // generate random default username
-    username: '_' + Math.random().toString(36).substr(2, 9),
+    username: location.state.email.split('@')[0],
   });
 
   const handleSubmit = (e) => {

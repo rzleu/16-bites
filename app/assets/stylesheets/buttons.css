@@ -44,15 +44,35 @@ button {
 }
 
 .signup-nav-btn,
-.upload--btn {
+.upload--btn,
+.btn--reverse-color {
   font-size: 1rem;
   font-weight: bold;
   color: black;
-  margin-left: 16px;
   border: 2px solid black;
   border-radius: 100px;
   padding: 0.4em 0.7em;
   /* line-height: 16px; */
+}
+
+.signup-nav-btn {
+  margin-left: 16px;
+}
+.btn--reverse-color {
+  background-color: #181a18;
+  color: whitesmoke;
+}
+
+.editors-choice-btn {
+  font-size: 1.5rem;
+  padding: 0.5em 1em;
+  margin-bottom: 20px;
+}
+
+.started--btn {
+  font-size: 1.5rem;
+  padding: 0.5em 1.5em;
+  margin-bottom: 20px;
 }
 
 .signup-nav-btn:active {
@@ -88,4 +108,9 @@ button {
   color: rgb(255, 255, 255);
   background-color: rgb(34, 34, 34);
   border-color: rgb(69, 69, 69);
+}
+
+.root--sign-up {
+  font-size: 3rem;
+  padding: 1rem;
 }

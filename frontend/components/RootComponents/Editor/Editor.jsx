@@ -11,14 +11,14 @@ import editorEight from 'Images/editors-8.png';
 function Editor() {
   return (
     <div className='editor--view'>
-      <img src={editorOne} alt='editor image one' />
-      <img src={editorTwo} alt='editor image two' />
-      <img src={editorThree} alt='editor image three' />
-      <img src={editorFour} alt='editor image four' />
-      <img src={editorFive} alt='editor image five' />
-      <img src={editorSix} alt='editor image six' />
-      <img src={editorSeven} alt='editor image seven' />
-      <img src={editorEight} alt='editor image eight' />
+      <img src={editorOne} alt='editor one' />
+      <img src={editorTwo} alt='editor two' />
+      <img src={editorThree} alt='editor three' />
+      <img src={editorFour} alt='editor four' />
+      <img src={editorFive} alt='editor five' />
+      <img src={editorSix} alt='editor six' />
+      <img src={editorSeven} alt='editor seven' />
+      <img src={editorEight} alt='editor eight' />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChartLine,
   faLeaf,
@@ -37,7 +37,8 @@ function Root() {
           </h1>
           <p className='root--para'>
             Get inspired with incredible photos from diverse styles and genres
-            around the world. We're not guided by fads—just great photography.
+            around the world. We&apos;re not guided by fads—just great
+            photography.
           </p>
           <Link to='/signup' className='signup-nav-btn root--sign-up'>
             Sign Up
@@ -48,7 +49,7 @@ function Root() {
           </h2>
 
           <div className='splash--content-one'>
-            <FontAwesomeIcon icon={faLeaf} style={{fontSize: '60px'}} />
+            <FontAwesomeIcon icon={faLeaf} style={{ fontSize: '60px' }} />
 
             <h3 className='splash--header-two'>Grow as a photographer</h3>
             <p>
@@ -59,7 +60,7 @@ function Root() {
           </div>
 
           <div className='splash--content-two'>
-            <FontAwesomeIcon icon={faChartLine} style={{fontSize: '60px'}} />
+            <FontAwesomeIcon icon={faChartLine} style={{ fontSize: '60px' }} />
 
             <h3 className='splash--header-two'>Build your career</h3>
             <p>
@@ -71,8 +72,10 @@ function Root() {
           </div>
 
           <div className='splash--content-three'>
-            <FontAwesomeIcon icon={faTools} style={{fontSize: '60px'}} />
-            <h3 className='splash--header-two'>See how you're performing</h3>
+            <FontAwesomeIcon icon={faTools} style={{ fontSize: '60px' }} />
+            <h3 className='splash--header-two'>
+              See how you&apos;re performing
+            </h3>
             <p>
               Present yourself as a professional. Display your Services, create
               a Directory listing and get hired, showcase your articles,
@@ -98,12 +101,12 @@ function Root() {
               </a>
             </div>
           </section>
-          <div className='splash--curve-yellow'></div>
+          <div className='splash--curve-yellow' />
           <div className='splash--devices'>
             <img
               src={devices}
-              alt='devices image'
-              style={{maxHeight: '340px', maxWidth: '340px'}}
+              alt='devices'
+              style={{ maxHeight: '340px', maxWidth: '340px' }}
             />
           </div>
         </div>
@@ -115,7 +118,7 @@ function Root() {
             <div className='splash--banner-icon splash--banner-editor-icon'>
               <FontAwesomeIcon icon={faMedal} size='4x' />
             </div>
-            <h2>Editor's Choice</h2>
+            <h2>Editor&apos;s Choice</h2>
           </div>
 
           {/* SECTION 4 */}
@@ -130,7 +133,7 @@ function Root() {
               to='/editors'
               className='btn--reverse-color editors-choice-btn'
             >
-              View Editors' Choice
+              View Editors&apos; Choice
             </Link>
 
             <Editor />
@@ -262,14 +265,14 @@ function Root() {
                 <p>
                   Don’t let your photos sit there gathering dust, like on other
                   platforms. Gain exposure and get paid for your work with 500px
-                  Licensing. You'll earn 60% royalties (one of the industry's
-                  highest rates) when you license your photos exclusively with
-                  our global distribution partners.
+                  Licensing. You&aposll earn 60% royalties (one of the
+                  industry&apos;s highest rates) when you license your photos
+                  exclusively with our global distribution partners.
                 </p>
                 <Link
                   to='/licensing'
                   className='btn--reverse-color started--btn'
-                  style={{position: 'relative', top: '20px'}}
+                  style={{ position: 'relative', top: '20px' }}
                 >
                   Tell me more
                 </Link>
@@ -302,7 +305,7 @@ function Root() {
             <path
               d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z'
               className='shape-fill'
-            ></path>
+            />
           </svg>
         </div>
       </section>

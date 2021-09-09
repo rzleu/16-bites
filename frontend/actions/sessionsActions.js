@@ -19,10 +19,13 @@ const receiveErrors = (errors) => ({
   errors,
 });
 
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS,
+});
+
 export const signup = (user) => (dispatch) =>
   SessionAPIUtil.signup(user).then(
-    (user) =>
-      dispatch(receiveCurrUser(user)).catch((errors) => console.log('WHAT')),
+    (response) => dispatch(receiveCurrUser(response)),
     (error) => dispatch(receiveErrors(error.responseJSON)),
   );
 

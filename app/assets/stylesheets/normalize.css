@@ -367,3 +367,7 @@ html {
 p {
   max-width: 70ch;
 }
+
+a {
+  line-height: 1.3;
+}

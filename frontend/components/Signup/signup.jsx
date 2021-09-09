@@ -15,12 +15,9 @@ function Signup() {
   const history = useHistory();
 
   useEffect(() => {
-    let clearErrors;
-    if (!errors) {
-      clearErrors = setTimeout(() => {
-        setErrors('');
-      }, 2000);
-    }
+    const clearErrors = setTimeout(() => {
+      setErrors('');
+    }, 2000);
     return () => {
       clearTimeout(clearErrors);
     };

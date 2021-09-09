@@ -16,8 +16,16 @@ import {
 import AppleStore from 'Images/apple_store.svg';
 import GooglePlay from 'Images/google-play-badge.svg';
 import devices from 'Images/devices.png';
-import yellowDivider from 'Images/yellow-divider.svg';
+import portfolio from 'Images/portfiolio.png';
+import quests from 'Images/quests.png';
+import licensing from 'Images/licensing.jpg';
+import cardOne from 'Images/card-1.jpg';
+import cardTwo from 'Images/card-2.jpg';
+import cardThree from 'Images/card-3.jpg';
+import cardFour from 'Images/card-4.jpg';
 import Footer from '../Footer';
+import Card from '../Card';
+import Editor from '../RootComponents/Editor';
 
 function Root() {
   return (
@@ -124,6 +132,8 @@ function Root() {
             >
               View Editors' Choice
             </Link>
+
+            <Editor />
           </section>
 
           {/* SECTION 5 */}
@@ -148,6 +158,8 @@ function Root() {
               >
                 Get Started
               </Link>
+
+              <img src={portfolio} alt='portfolio' className='img--large' />
             </div>
           </>
 
@@ -170,6 +182,36 @@ function Root() {
               <Link to='/portfolio' className='btn--reverse-color started--btn'>
                 View Resource Hub
               </Link>
+
+              <div className='card--wrapper'>
+                <Card
+                  image={cardOne}
+                  title='Landscape Photography Tutorial'
+                  tags={['Article', 'Online', 'Free']}
+                  footerTitle='Anthill499'
+                />
+
+                <Card
+                  image={cardTwo}
+                  title='How to shoot fine art on homel'
+                  tags={['Video', 'Online', 'Free']}
+                  footerTitle='ahumanpinto'
+                />
+
+                <Card
+                  image={cardThree}
+                  title='Shooting Balancing Photos with E.'
+                  tags={['Podcast', 'Online', 'Free']}
+                  footerTitle='literal_monkey_monk'
+                />
+
+                <Card
+                  image={cardFour}
+                  title='Great Big Photography World Pod...'
+                  tags={['Podcast', 'Online', 'Free']}
+                  footerTitle='checkin_man'
+                />
+              </div>
             </div>
           </>
 
@@ -182,18 +224,24 @@ function Root() {
               <h2>Quests</h2>
             </div>
 
-            <div className='splash--banner-content'>
-              <FontAwesomeIcon icon={faTrophy} />
-              <h3>Take photos. Win prizes.</h3>
-              <p>
-                Quests are creative photo challenges that encourage you to test
-                your skills and submit your best work for a chance to win
-                exciting prizes. We launch new Quests with unique themes every
-                week so there is always something for everyone!
-              </p>
-              <Link to='/portfolio' className='btn--reverse-color started--btn'>
-                View Quests
-              </Link>
+            <div className='splash--banner-content quest--content'>
+              <div className='quest--content-info'>
+                <FontAwesomeIcon icon={faTrophy} size='4x' />
+                <h3>Take photos. Win prizes.</h3>
+                <p>
+                  Quests are creative photo challenges that encourage you to
+                  test your skills and submit your best work for a chance to win
+                  exciting prizes. We launch new Quests with unique themes every
+                  week so there is always something for everyone!
+                </p>
+                <Link
+                  to='/portfolio'
+                  className='btn--reverse-color started--btn'
+                >
+                  View Quests
+                </Link>
+              </div>
+              <img src={quests} alt='quests' className='img--large' />
             </div>
           </>
 
@@ -206,24 +254,31 @@ function Root() {
               <h2>Licensing</h2>
             </div>
 
-            <div className='splash--banner-content'>
-              <FontAwesomeIcon icon={faPiggyBank} size='4x' />
-              <h3>Get paid for your photos</h3>
-              <p>
-                Don’t let your photos sit there gathering dust, like on other
-                platforms. Gain exposure and get paid for your work with 500px
-                Licensing. You'll earn 60% royalties (one of the industry's
-                highest rates) when you license your photos exclusively with our
-                global distribution partners.
-              </p>
-              <Link to='/licensing' className='btn--reverse-color started--btn'>
-                Tell me more
-              </Link>
+            <div className='splash--banner-content quest--content'>
+              <img src={licensing} alt='licensing' className='img--large' />
+              <div>
+                <FontAwesomeIcon icon={faPiggyBank} size='4x' />
+                <h3>Get paid for your photos</h3>
+                <p>
+                  Don’t let your photos sit there gathering dust, like on other
+                  platforms. Gain exposure and get paid for your work with 500px
+                  Licensing. You'll earn 60% royalties (one of the industry's
+                  highest rates) when you license your photos exclusively with
+                  our global distribution partners.
+                </p>
+                <Link
+                  to='/licensing'
+                  className='btn--reverse-color started--btn'
+                  style={{position: 'relative', top: '20px'}}
+                >
+                  Tell me more
+                </Link>
+              </div>
             </div>
           </>
 
           {/* SECTION 8 */}
-          <section className='splash--banner splash--section-nine'>
+          <section className='splash--banner splash--section-nine join--banner'>
             <h2>Join our community today</h2>
             <p>
               Do you love photography? Want to constantly stay inspired and be

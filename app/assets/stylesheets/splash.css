@@ -199,7 +199,9 @@
   background-color: #45457c;
 }
 
-/** BANNER CONTENT */
+/* =================================================================
+* BANNER CONTENT 
+ ================================================================*/
 .splash--banner-content {
   display: grid;
   place-items: center;
@@ -211,6 +213,49 @@
   border-radius: 100vh;
   width: 128px;
   height: 128px;
+}
+
+.quest--content h3 {
+  margin-bottom: -2px;
+  font-size: 1.75em;
+}
+
+.quest--content {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  line-height: 1.3;
+  gap: 1rem;
+}
+
+.quest--content a {
+  text-align: center;
+  max-width: 230px;
+}
+
+.quest--content-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.join--banner {
+  position: relative;
+  padding-top: 1rem;
+  color: whitesmoke;
+}
+
+.join--banner > h2 {
+  font-size: 2.75em;
+  position: initial;
+}
+
+.join--banner > a {
+  margin-top: 1.75rem;
+}
+
+.join--banner > a:hover {
+  color: rgb(41, 134, 247);
+  background-color: whitesmoke;
 }
 
 /* =================================================================
@@ -276,4 +321,9 @@
   width: 100%;
   position: absolute;
   z-index: -1;
+}
+
+.img--large {
+  max-width: 940px;
+  max-height: 463px;
 }

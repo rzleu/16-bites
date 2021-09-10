@@ -2,6 +2,16 @@
   "plugins": ["jsx-a11y"],
   "extends": ["airbnb", "airbnb/hooks"],
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true
+  },
   "rules": {
     "quotes": [1, "single", { "avoidEscape": true }],
     "jsx-quotes": ["error", "prefer-single"],
@@ -20,6 +30,7 @@
           "some": ["nesting", "id"]
         }
       }
-    ]
+    ],
+    "react/prop-types": 0
   }
 }

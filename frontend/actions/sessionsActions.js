@@ -1,3 +1,4 @@
+/* eslint-disable implicit-arrow-linebreak */
 import * as SessionAPIUtil from '../utils/sessionApi';
 
 export const RECEIVE_CURR_USER = 'RECEIVE_CURR_USER';

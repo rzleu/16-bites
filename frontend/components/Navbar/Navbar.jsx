@@ -1,12 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {useSelector, useDispatch} from 'react-redux';
-import {useHistory} from 'react-router-dom';
-import {logout} from '../../actions/sessionsActions';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowUp} from '@fortawesome/free-solid-svg-icons';
-// @ts-ignore
+import { Link, useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import Logo from 'Images/logo.svg';
+import { logout } from '../../actions/sessionsActions';
 
 export default function Navbar() {
   const history = useHistory();
@@ -82,16 +80,22 @@ export default function Navbar() {
           ) : (
             <>
               <button
+                type='button'
                 onClick={() => handleLogout()}
                 className='nav--button signup-nav-btn'
+                style={{ marginRight: '10px' }}
               >
                 Log out
               </button>
 
-              <button className='nav--button upload--btn'>
+              <Link
+                to='/manage/upload'
+                type='button'
+                className='nav--button upload--btn'
+              >
                 <FontAwesomeIcon icon={faArrowUp} className='btn--icon' />
                 <span>Upload</span>
-              </button>
+              </Link>
             </>
           )}
         </div>

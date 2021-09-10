@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
+import { HashRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import App from './App';
 import configureStore from './store';
-import {HashRouter} from 'react-router-dom';
 
 document.addEventListener('DOMContentLoaded', () => {
-  let preloadedState = undefined;
+  let preloadedState;
   if (window.currentUser) {
     preloadedState = {
       session: {

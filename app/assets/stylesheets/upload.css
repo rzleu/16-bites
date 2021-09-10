@@ -1,0 +1,30 @@
+.upload--banner {
+  background-color: rgb(24, 26, 24);
+  color: whitesmoke;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.upload--banner > span {
+  color: #7fc1ff;
+  font-weight: bold;
+}
+
+.upload--header {
+  margin-left: 4rem;
+}
+
+input[type='file'] {
+  opacity: 0;
+}
+
+.upload--content {
+  display: grid;
+  place-items: center;
+  padding-top: 4rem;
+}
+
+.file--btn {
+  padding: 1rem 0;
+  max-width: 170px;
+}

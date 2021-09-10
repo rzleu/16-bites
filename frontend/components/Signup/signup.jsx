@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import {useDispatch} from 'react-redux';
-import {useHistory} from 'react-router-dom';
-import {login} from '../../actions/sessionsActions';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { login } from '../../actions/sessionsActions';
 import Errors from '../Errors';
-import {checkEmailUniquess} from '../../utils/sessionApi';
+import { checkEmailUniquess } from '../../utils/sessionApi';
 
 function Signup() {
   const [signupCreds, setCreds] = useState({
@@ -47,6 +47,7 @@ function Signup() {
         password: 'demodemodemo',
       }),
     );
+    history.push('/');
   };
 
   return (
@@ -60,11 +61,10 @@ function Signup() {
           </label>
           <input
             autoComplete='true'
-            autoFocus
             type='email'
             name='email'
             id='email'
-            onChange={(e) => setCreds({...signupCreds, email: e.target.value})}
+            onChange={(e) => setCreds({ ...signupCreds, email: e.target.value })}
             required
             value={signupCreds.email}
           />
@@ -78,9 +78,7 @@ function Signup() {
             name='password'
             id='new-password'
             placeholder='(minimum 8 characters)'
-            onChange={(e) =>
-              setCreds({...signupCreds, password: e.target.value})
-            }
+            onChange={(e) => setCreds({ ...signupCreds, password: e.target.value })}
             required
             value={signupCreds.password}
           />
@@ -90,7 +88,7 @@ function Signup() {
           </button>
         </form>
 
-        <button className='auth--btn demo--btn' onClick={demoSubmit}>
+        <button type='button' className='auth--btn demo--btn' onClick={demoSubmit}>
           Demo User
         </button>
       </div>

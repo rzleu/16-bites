@@ -41,14 +41,14 @@
 .root--title {
   grid-column: 11/28;
   grid-row: 3 / 5;
-  color: whitesmoke;
+  color: var(--lighterGrey);
   font-size: 3rem;
   line-height: 3.125rem;
   letter-spacing: -0.3px;
 }
 
 .root--para {
-  color: whitesmoke;
+  color: var(--lighterGrey);
   font-size: 1.125rem;
   grid-column: 11/30;
   grid-row: 5 / 9;
@@ -57,7 +57,7 @@
 
 .root--sign-up {
   color: black;
-  background-color: white;
+  background-color: var(--white);
   font-size: 1.125rem;
   grid-column: 11/19;
   grid-row: 6 / 6;
@@ -66,7 +66,7 @@
   letter-spacing: 1px;
   max-height: 66px;
   width: 220px;
-  border-color: whitesmoke;
+  border-color: var(--lighterGrey);
   margin: 0;
   display: grid;
   place-items: center;
@@ -75,9 +75,9 @@
 }
 
 .root--sign-up:hover {
-  background-color: rgb(215, 216, 219);
-  border-color: rgb(215, 216, 219);
-  color: rgb(34, 34, 34);
+  background-color: var(--lightPurple);
+  border-color: var(--lightPurple);
+  color: var(--veryDarkGrey);
 }
 
 .splash--content-one,
@@ -173,7 +173,7 @@
 
 .splash--banner h2,
 .splash--banner h3 {
-  color: white;
+  color: var(--white);
   font-size: 3.75rem;
   position: absolute;
   bottom: 5%;
@@ -196,7 +196,7 @@
 }
 
 .splash--section-nine {
-  background-color: #45457c;
+  background-color: var(--lighterPurple);
 }
 
 /* =================================================================
@@ -241,7 +241,7 @@
 .join--banner {
   position: relative;
   padding-top: 1rem;
-  color: whitesmoke;
+  color: var(--lighterGrey);
 }
 
 .join--banner > h2 {
@@ -254,8 +254,8 @@
 }
 
 .join--banner > a:hover {
-  color: rgb(41, 134, 247);
-  background-color: whitesmoke;
+  color: var(--primaryBlueHover);
+  background-color: var(--lighterGrey);
 }
 
 /* =================================================================
@@ -268,7 +268,7 @@
 .splash--banner-crown-icon {
   position: absolute;
   bottom: 42%;
-  color: whitesmoke;
+  color: var(--lighterGrey);
 }
 
 .splash--banner-editor-icon {

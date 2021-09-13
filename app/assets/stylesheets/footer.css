@@ -1,5 +1,5 @@
 footer {
-  color: rgb(109, 115, 120);
+  color: var(--mediumGrey);
 }
 
 footer h4 {
@@ -33,7 +33,7 @@ footer h4 {
 }
 
 .footer--wrapper a:hover {
-  color: rgb(41, 134, 247);
+  color: var(--primaryBlueHover);
 }
 
 .footer--devices-header {
@@ -52,7 +52,7 @@ footer h4 {
 
 .footer--end::after {
   content: '';
-  border-top: 1px solid rgb(109, 115, 120);
+  border-top: 1px solid var(--mediumGrey);
   position: absolute;
   height: 1px;
   left: 16.5%;

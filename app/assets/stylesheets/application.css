@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+  --white: #fff;
+  --lighterGrey: #f7f8fa;
+  --grey: #d7d8db;
+  --mediumGrey: #6d7378;
+  --veryDarkGrey: #222;
+  --disabledGrey: #b6b9bb;
+  --primaryBlue: #0870d1;
+  --primaryBlueHover: #2986f7;
+  --accentFill: #7fc1ff;
+  --teal: #07d3d4;
+  --darkYellow: #fccc00;
+  --lightPurple: #aeaeff;
+  --negativeRed: #ff0033;
+}

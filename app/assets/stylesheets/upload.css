@@ -28,3 +28,68 @@ input[type='file'] {
   padding: 1rem 0;
   max-width: 170px;
 }
+
+.photo--edit-form {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.upload--rightbar {
+  grid-column: 2/2;
+  /* padding: 5%; */
+}
+
+.upload--rightbar > form {
+  width: 70%;
+}
+
+/* RESET MODAL */
+.reset-modal--wrapper {
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+
+  z-index: 2000;
+}
+
+.reset-modal--content {
+  background-color: whitesmoke;
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.15), 0 5px 5px rgba(0, 0, 0, 0.22);
+  min-height: 35%;
+  width: 25%;
+  min-width: 450px;
+  max-height: 332px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: center;
+}
+
+.reset-modal--content > * {
+  text-align: center;
+}
+
+/* ================================================================= 
+* BUTTON
+================================================================*/
+
+.photo--cancel-btn {
+  color: rgb(41, 134, 247);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.reset-modal--content > .photo--leave-btn {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  background-color: #ff0000;
+  border-color: #ff0000;
+  padding: 0.5em 2.25em;
+  font-size: 1.1rem;
+}

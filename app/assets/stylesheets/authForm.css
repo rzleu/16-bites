@@ -35,7 +35,7 @@ label {
 }
 
 input:not([type='submit']) {
-  border: 1px solid rgb(215, 216, 219);
+  border: 1px solid var(--lighterGrey);
   border-radius: 4px;
   height: 44px;
   font-size: 1rem;
@@ -43,5 +43,30 @@ input:not([type='submit']) {
 }
 
 input:not([type='submit']) {
-  border: 1px solid #1890ff;
+  border: 1px solid var(--lighterGrey);
+}
+
+.demo--login-or {
+  padding: 0.75em 0;
+  position: relative;
+}
+
+.demo--login-or::after {
+  height: 2px;
+  width: 150%;
+  content: '';
+  background-color: var(--veryDarkGrey);
+  right: 120%;
+  top: 50%;
+  position: absolute;
+}
+
+.demo--login-or::before {
+  height: 2px;
+  width: 150%;
+  content: '';
+  background-color: var(--veryDarkGrey);
+  left: 120%;
+  top: 50%;
+  position: absolute;
 }

@@ -6,10 +6,6 @@ function Dropdown({ list, title, handleClick = (e) => e }) {
   const [isOpen, setIsOpen] = useState(null);
   const [dropDownTitle, setDropDownTitle] = useState(list[0].key);
 
-  useEffect(() => {
-    handleClick(dropDownTitle);
-  }, [dropDownTitle, handleClick]);
-
   return (
     <>
       <h2>{title}</h2>
@@ -24,12 +20,13 @@ function Dropdown({ list, title, handleClick = (e) => e }) {
         </button>
         {isOpen && (
           <ul className='dropdown--list'>
-            {list.map(({ key, text, value }) => (
+            {list.map(({ key, text, value }, i) => (
               <button
                 type='button'
                 className='dropdown--item'
-                key={key}
+                key={i}
                 onClick={() => {
+                  handleClick(value);
                   setDropDownTitle(value);
                   setIsOpen(null);
                 }}
@@ -43,7 +40,6 @@ function Dropdown({ list, title, handleClick = (e) => e }) {
           </ul>
         )}
       </div>
-      <div style={{ height: '1000px', width: '100%' }} />
     </>
   );
 }

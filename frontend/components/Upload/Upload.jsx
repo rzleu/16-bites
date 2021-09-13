@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGem, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import UploadForm from './UploadForm';
 
 function Upload() {
-  const currUser = useSelector((state) => state.session.id);
   const [showPhotoForm, setShowPhotoForm] = useState(false);
-  const [photoFields, setPhotoFields] = useState({
-    title: null,
-    description: null,
-    photoFile: null,
-    location: null,
-    keywords: null,
-    categoru: null,
-    user_id: currUser,
-  });
+  const [photo, setPhoto] = useState(null);
+
+  const resetPhoto = () => {
+    setPhoto(null);
+    setShowPhotoForm(false);
+  };
 
   return (
     <>
@@ -45,10 +40,7 @@ function Upload() {
               onChange={(e) => {
                 e.preventDefault();
                 setShowPhotoForm(!showPhotoForm);
-                setPhotoFields({
-                  ...photoFields,
-                  title: e.currentTarget.files[0].name,
-                });
+                setPhoto(e.currentTarget.files[0]);
               }}
               multiple
             />
@@ -60,7 +52,7 @@ function Upload() {
           </section>
         </>
       ) : (
-        <UploadForm />
+        <UploadForm photo={photo} resetPhoto={resetPhoto} />
       )}
     </>
   );

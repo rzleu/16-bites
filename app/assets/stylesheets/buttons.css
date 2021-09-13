@@ -10,14 +10,14 @@ button {
 }
 
 .nav--button:hover {
-  color: rgb(41, 134, 247);
+  color: var(--primaryBlueHover);
 }
 
 .auth--btn {
-  color: rgb(255, 255, 255);
+  color: var(--lighterGrey);
   cursor: pointer;
-  background-color: rgb(8, 112, 209);
-  border-color: rgb(8, 112, 209);
+  background-color: var(--primaryBlue);
+  border-color: var(--primaryBlue);
   font-weight: 700;
   line-height: 20px;
   border-radius: 28px;
@@ -28,19 +28,20 @@ button {
 }
 
 .auth--btn:hover {
-  border-color: rgb(82, 155, 223);
-  background-color: rgb(82, 155, 223);
+  border-color: var(--primaryBlueHover);
+  background-color: var(--primaryBlueHover);
 }
 
 .login-nav-btn {
-  color: black;
+  color: var(--veryDarkGrey);
   font-weight: 700;
   margin-left: 16px;
+  align-self: center;
 }
 
 .login-nav-btn:hover,
 .signup-nav-btn:hover {
-  color: #096dd9;
+  color: var(--primaryBlueHover);
 }
 
 .signup-nav-btn,
@@ -49,7 +50,7 @@ button {
   font-size: 1rem;
   font-weight: bold;
   color: black;
-  border: 2px solid black;
+  border: 2px solid var(--veryDarkGrey);
   border-radius: 100px;
   padding: 0.4em 0.7em;
   /* line-height: 16px; */
@@ -59,8 +60,8 @@ button {
   margin-left: 16px;
 }
 .btn--reverse-color {
-  background-color: #181a18;
-  color: whitesmoke;
+  background-color: var(--veryDarkGrey);
+  color: var(--lighterGrey);
 }
 
 .editors-choice-btn {
@@ -76,9 +77,9 @@ button {
 }
 
 .signup-nav-btn:active {
-  background-color: rgb(13, 96, 174);
-  border-color: rgb(13, 96, 174);
-  color: rgb(255, 255, 255);
+  background-color: var(--primaryBlue);
+  border-color: var(--primaryBlue);
+  color: var(--lighterGrey);
 }
 
 .demo--btn {
@@ -99,18 +100,22 @@ button {
 }
 
 .upload--btn:hover {
-  color: rgb(34, 34, 34);
-  background-color: rgb(233, 233, 233);
-  border-color: rgb(34, 34, 34);
+  color: var(--veryDarkGrey);
+  background-color: var(--lighterGrey);
+  border-color: var(--veryDarkGrey);
 }
 
 .upload--btn:active {
-  color: rgb(255, 255, 255);
-  background-color: rgb(34, 34, 34);
-  border-color: rgb(69, 69, 69);
+  color: var(--lighterGrey);
+  background-color: var(--veryDarkGrey);
+  border-color: var(--lighterGrey);
 }
 
 .root--sign-up {
   font-size: 3rem;
   padding: 1rem;
+}
+
+button {
+  cursor: pointer;
 }

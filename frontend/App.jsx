@@ -7,8 +7,12 @@ import Onboarding from './components/Onboarding';
 import Root from './components/Root';
 import ProtectedRoute from './components/ProtectedRoute';
 import Upload from './components/Upload';
+import Homefeed from './components/Homefeed';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const currentUser = useSelector((state) => state.session?.id);
+
   return (
     <>
       <Navbar />
@@ -25,7 +29,8 @@ function App() {
         <Route path='/login' component={Login} />
         <Route path='/signup' component={Signup} />
         <ProtectedRoute path='/manage/upload' component={Upload} />
-        <Route path='/' component={Root} />
+        <Route path='/manage' />
+        <Route path='/' component={currentUser ? Homefeed : Root} />
       </Switch>
     </>
   );

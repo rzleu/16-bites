@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, clearErrors } from '../../actions/sessionsActions';
+import { login } from '../../actions/sessionsActions';
+import { clearErrors } from '../../actions/errorActions';
 import Errors from '../Errors';
 
 function Login() {

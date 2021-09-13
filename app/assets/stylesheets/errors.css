@@ -1,5 +1,5 @@
 .errors--wrapper {
-  color: #ff0033;
+  color: var(--negativeRed);
   display: flex;
   font-size: 1.1rem;
   font-weight: 600;

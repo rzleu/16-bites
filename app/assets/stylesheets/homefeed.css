@@ -1,0 +1,213 @@
+/* =================================================================
+* carousel
+================================================================ */
+.home--carousel {
+  display: flex;
+  max-height: 210px;
+  gap: 5%;
+}
+.home--carousel-wrapper {
+}
+
+.home--carousel-wrapper h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0;
+}
+.home--carousel-wrapper p {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.home--carousel-itm {
+  width: 421px;
+  max-height: inherit;
+  max-width: inherit;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: var(--white);
+  padding: 1.4%;
+}
+.img--wrapper {
+  height: 128px;
+  display: flex;
+  gap: 1%;
+  overflow: hidden;
+}
+.img--wrapper img {
+  pointer-events: none;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.home--carousel-txt-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 7px;
+}
+.home--carousel-txt-content div {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.home--carousel button {
+  width: 112px;
+  padding: 0.5em 1.5em;
+  max-height: 32px;
+}
+.homefeed-home-btn {
+  margin-top: 1rem;
+  color: var(--primaryBlue);
+  background-color: inherit;
+  font-weight: 700;
+  position: relative;
+  padding: 0;
+  margin-bottom: 8px;
+}
+.homefeed-home-btn::before {
+  background-color: var(--primaryBlue);
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.homefeed--container-pad {
+  padding: 0 5%;
+}
+
+/* ========================================== 
+* HOMEFEED
+================================================================ */
+.homefeed--container {
+  /* padding: 0 ; */
+}
+.homefeed--content {
+  background-clip: border-box;
+  background-color: var(--lighterGrey);
+  width: 100%;
+}
+.homefeed--container h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+}
+.homefeed--container h2 + p {
+  margin-top: 2px;
+}
+.homefeed-txt--content {
+  color: var(--mediumGrey);
+}
+
+.homefeed--welcome-msg {
+  padding: 1rem 0;
+  text-align: center;
+  border-bottom: 1px solid #d7d8db;
+}
+
+.homefeed--welcome-msg > div {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.homefeed--welcome-msg > span {
+  font-size: 0.9rem;
+}
+
+/* ========================================================================== 
+* EXPLORER
+================================================================*/
+.homefeed-explore-wrapper {
+  position: relative;
+}
+
+.homefeed-explore-wrapper h3 {
+  margin: 4% 0 0 0;
+}
+
+.homefeed-explore-wrapper::before {
+  border-top: 1px solid #d7d8db;
+  height: 2px;
+  width: 90vw;
+  content: '';
+  top: -20px;
+  position: absolute;
+}
+
+.homefeed-txt--content {
+  margin: 4px 0 10px 0;
+}
+
+.item--links > span {
+  color: var(--mediumGrey);
+}
+.item--links > span:hover {
+  color: var(--primaryBlueHover);
+}
+
+/* ================================================================= 
+* CARD
+================================================================*/
+
+.homefeed--explore-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1.5%;
+  overflow: hidden;
+  justify-content: center;
+}
+.homefeed--card-photos {
+  display: grid;
+  grid-template-areas:
+    'a a b'
+    'c d d';
+  width: 100%;
+  overflow: clip;
+  gap: 1%;
+}
+
+.homefeed--card-photos > div {
+  height: 211px;
+  object-fit: cover;
+}
+.homefeed--card-photos img {
+  object-fit: cover;
+  max-height: inherit;
+}
+.homefeed--card-item {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 4px, rgba(0, 0, 0, 0.16) 0px 4px 12px;
+  max-height: 480px;
+  max-width: 400px;
+  margin-bottom: 2%;
+  overflow: clip;
+}
+
+.homefeed--card-photos > div {
+  max-height: 211px;
+}
+
+.homefeed--container .homefeed--card-icon {
+  height: 30px;
+  width: 30px;
+  position: relative;
+}
+
+.homefeed-img-wrapper {
+  max-height: 211px;
+}
+.homefeed-card-title {
+  padding: 3.5% 3%;
+  display: flex;
+  gap: 4%;
+}
+.homefeed-card-title .card--title {
+  font-size: 0.72rem;
+}
+
+.homefeed-card-title .card--description {
+  font-size: 0.65rem;
+  color: var(--mediumGrey);
+  margin-top: 5px;
+}

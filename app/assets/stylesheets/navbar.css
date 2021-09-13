@@ -18,22 +18,22 @@ nav ul {
 }
 
 .nav--link:hover {
-  color: rgb(8, 112, 209);
+  color: var(--primaryBlueHover);
 }
 
 .login--label {
-  color: rgb(109, 115, 120);
+  color: var(--mediumGrey);
 }
 
 .nav--wrapper {
-  background-color: whitesmoke;
+  background-color: var(--white);
   max-height: 72px;
   width: 100%;
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  overflow: hidden;
+  overflow: visible;
   padding: 0 5%;
   padding-left: 4.5%;
   z-index: 1000;
@@ -61,6 +61,8 @@ nav ul {
 .nav--right {
   height: 100%;
   align-self: center;
+  display: flex;
+  gap: 10px;
 }
 
 .logo {

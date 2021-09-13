@@ -1,10 +1,9 @@
 /* eslint-disable implicit-arrow-linebreak */
 import * as SessionAPIUtil from '../utils/sessionApi';
+import { receiveErrors } from './errorActions';
 
 export const RECEIVE_CURR_USER = 'RECEIVE_CURR_USER';
 export const LOGOUT_CURR_USER = 'LOGOUT_CURR_USER';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
-export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 const receiveCurrUser = (curUser) => ({
   type: RECEIVE_CURR_USER,
@@ -13,15 +12,6 @@ const receiveCurrUser = (curUser) => ({
 
 const logoutCurrUser = () => ({
   type: LOGOUT_CURR_USER,
-});
-
-const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
-  errors,
-});
-
-export const clearErrors = () => ({
-  type: CLEAR_ERRORS,
 });
 
 export const signup = (user) => (dispatch) =>

@@ -87,7 +87,7 @@ function Signup() {
             Sign Up
           </button>
         </form>
-
+        <div className='demo--login-or'>or login with</div>
         <button type='button' className='auth--btn demo--btn' onClick={demoSubmit}>
           Demo User
         </button>

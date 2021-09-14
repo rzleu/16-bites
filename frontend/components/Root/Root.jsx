@@ -32,13 +32,10 @@ function Root() {
     <>
       <section className='background'>
         <div className='root--content'>
-          <h1 className='root--title'>
-            Discover and share the world’s best photos
-          </h1>
+          <h1 className='root--title'>Discover and share the world’s best photos</h1>
           <p className='root--para'>
-            Get inspired with incredible photos from diverse styles and genres
-            around the world. We&apos;re not guided by fads—just great
-            photography.
+            Get inspired with incredible photos from diverse styles and genres around
+            the world. We&apos;re not guided by fads—just great photography.
           </p>
           <Link to='/signup' className='signup-nav-btn root--sign-up'>
             Sign Up
@@ -65,22 +62,19 @@ function Root() {
             <h3 className='splash--header-two'>Build your career</h3>
             <p>
               Get immediate exposure with your first upload. Our Pulse algorithm
-              surfaces new photographs and photographers, ensuring your photos
-              are seen by the community so you receive valuable feedback on day
-              one.
+              surfaces new photographs and photographers, ensuring your photos are
+              seen by the community so you receive valuable feedback on day one.
             </p>
           </div>
 
           <div className='splash--content-three'>
             <FontAwesomeIcon icon={faTools} style={{ fontSize: '60px' }} />
-            <h3 className='splash--header-two'>
-              See how you&apos;re performing
-            </h3>
+            <h3 className='splash--header-two'>See how you&apos;re performing</h3>
             <p>
-              Present yourself as a professional. Display your Services, create
-              a Directory listing and get hired, showcase your articles,
-              presets, videos, and more with Resources, and curate Galleries to
-              highlight your work.
+              Present yourself as a professional. Display your Services, create a
+              Directory listing and get hired, showcase your articles, presets,
+              videos, and more with Resources, and curate Galleries to highlight your
+              work.
             </p>
           </div>
 
@@ -125,14 +119,10 @@ function Root() {
           <section className='splash--section-four'>
             <h3>The best of the best</h3>
             <p>
-              Our editors are always on the lookout for jaw dropping content for
-              you to discover and stay inspired. Check back weekly to see what’s
-              new.
+              Our editors are always on the lookout for jaw dropping content for you
+              to discover and stay inspired. Check back weekly to see what’s new.
             </p>
-            <Link
-              to='/editors'
-              className='btn--reverse-color editors-choice-btn'
-            >
+            <Link to='/editors' className='btn--reverse-color editors-choice-btn'>
               View Editors&apos; Choice
             </Link>
 
@@ -151,14 +141,11 @@ function Root() {
             <div className='splash--banner-content'>
               <h3>Designed and built for photographers</h3>
               <p>
-                Create your own high-quality website in minutes. Portfolios
-                allows you to share your work externally so you can build your
-                own brand and market yourself as a professional photographer.
+                Create your own high-quality website in minutes. Portfolios allows
+                you to share your work externally so you can build your own brand and
+                market yourself as a professional photographer.
               </p>
-              <Link
-                to='/portfoliio'
-                className='btn--reverse-color started--btn'
-              >
+              <Link to='/portfoliio' className='btn--reverse-color started--btn'>
                 Get Started
               </Link>
 
@@ -178,9 +165,9 @@ function Root() {
             <div className='splash--banner-content'>
               <h3>Discover something new</h3>
               <p>
-                Browse videos, articles, workshops, and presets from 500px users
-                to discover new areas of photography and grow your skills.
-                Become a Pro member to list your Resources in the Hub.
+                Browse videos, articles, workshops, and presets from 500px users to
+                discover new areas of photography and grow your skills. Become a Pro
+                member to list your Resources in the Hub.
               </p>
               <Link to='/portfolio' className='btn--reverse-color started--btn'>
                 View Resource Hub
@@ -232,15 +219,12 @@ function Root() {
                 <FontAwesomeIcon icon={faTrophy} size='4x' />
                 <h3>Take photos. Win prizes.</h3>
                 <p>
-                  Quests are creative photo challenges that encourage you to
-                  test your skills and submit your best work for a chance to win
-                  exciting prizes. We launch new Quests with unique themes every
-                  week so there is always something for everyone!
+                  Quests are creative photo challenges that encourage you to test
+                  your skills and submit your best work for a chance to win exciting
+                  prizes. We launch new Quests with unique themes every week so there
+                  is always something for everyone!
                 </p>
-                <Link
-                  to='/portfolio'
-                  className='btn--reverse-color started--btn'
-                >
+                <Link to='/portfolio' className='btn--reverse-color started--btn'>
                   View Quests
                 </Link>
               </div>
@@ -285,8 +269,8 @@ function Root() {
             <h2>Join our community today</h2>
             <p>
               Do you love photography? Want to constantly stay inspired and be
-              surrounded by millions of like-minded creators? Then sign-up today
-              and get rewarded for your love of photography.
+              surrounded by millions of like-minded creators? Then sign-up today and
+              get rewarded for your love of photography.
             </p>
             <Link to='/signup' className='signup-nav-btn root--sign-up'>
               Sign up

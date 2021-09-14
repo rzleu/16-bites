@@ -5,11 +5,39 @@ import UploadForm from './UploadForm';
 
 function Upload() {
   const [showPhotoForm, setShowPhotoForm] = useState(false);
-  const [photo, setPhoto] = useState(null);
+  const [photo, setPhoto] = useState({
+    photoFile: '',
+    photoUrl: null,
+    title: '',
+    doesExist: true,
+  });
 
   const resetPhoto = () => {
-    setPhoto(null);
+    setPhoto({
+      photoFile: '',
+      photoUrl: null,
+      title: '',
+      doesExist: true,
+    });
     setShowPhotoForm(false);
+  };
+
+  const handleFile = (e) => {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      setPhoto({
+        ...photo,
+        photoFile: file,
+        photoUrl: fileReader.result,
+        title: file.name.split('.')[0],
+      });
+    };
+
+    // debugger;
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   };
 
   return (
@@ -26,7 +54,15 @@ function Upload() {
             for 13 more days.
             <span> Learn more about memberships</span>
           </div>
-
+          <div
+            style={{
+              backgroundColor: 'var(--lighterGrey)',
+              minHeight: '80vh',
+              width: '100%',
+              position: 'absolute',
+              zIndex: -1,
+            }}
+          />
           <section className='upload--content'>
             <FontAwesomeIcon icon={faArrowUp} size='3x' />
             <h2>Upload photos</h2>
@@ -39,8 +75,8 @@ function Upload() {
               accept='image/png,image/jpg,image/jpeg,image/'
               onChange={(e) => {
                 e.preventDefault();
+                handleFile(e);
                 setShowPhotoForm(!showPhotoForm);
-                setPhoto(e.currentTarget.files[0]);
               }}
               multiple
             />
@@ -52,7 +88,7 @@ function Upload() {
           </section>
         </>
       ) : (
-        <UploadForm photo={photo} resetPhoto={resetPhoto} />
+        <UploadForm photo={photo} resetPhoto={resetPhoto} formType='CREATE' />
       )}
     </>
   );

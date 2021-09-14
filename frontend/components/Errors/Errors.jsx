@@ -1,13 +1,24 @@
-import React from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faTimes} from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
+import { clearErrors } from '../../actions/errorActions';
 
-function index({errors}) {
+function Errors({ errors }) {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    let clearError = null;
+    if (errors.length > 0) {
+      clearError = setTimeout(() => dispatch(clearErrors()), 2500);
+    }
+    return () => clearTimeout(clearError);
+  }, [errors, history, dispatch]);
+
   return (
     <ul>
-      {errors.length > 0 && (
+      {errors?.length > 0 && (
         <div className='errors--wrapper'>
-          <FontAwesomeIcon icon={faTimes} style={{color: '#ff0033'}} />
+          <FontAwesomeIcon icon={faTimes} style={{ color: '#ff0033' }} />
           {errors.map((error, idx) => (
             <li key={`${error}-${idx}`}>{error}</li>
           ))}
@@ -17,4 +28,4 @@ function index({errors}) {
   );
 }
 
-export default index;
+export default Errors;

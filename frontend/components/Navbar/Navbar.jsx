@@ -60,7 +60,7 @@ export default function Navbar() {
   const clickRef = useRef();
   // @ts-ignore
   const currUserId = useSelector((state) => state.session.id);
-  useOutsideClick(clickRef, () => setIsOpen((old) => !old));
+  useOutsideClick(clickRef, () => setIsOpen(false));
 
   const handleLogout = () => {
     dispatch(() => dispatch(logout()));
@@ -84,7 +84,7 @@ export default function Navbar() {
                 </Link>
               </li>
               {navLinks.map(({ path, text }, i) => (
-                <li className='nav--item'>
+                <li className='nav--item' key={i}>
                   <Link className='nav--link' to={path} key={i}>
                     {text}
                   </Link>
@@ -120,10 +120,9 @@ export default function Navbar() {
                   {isOpen && (
                     <ul className='nav--dropdown'>
                       {loggedinLinks.map(({ path, text }, i) => (
-                        <div>
+                        <div key={i}>
                           <Link
                             to={path}
-                            key={path}
                             onClick={text === 'Logout' ? () => handleLogout() : null}
                           >
                             {text}

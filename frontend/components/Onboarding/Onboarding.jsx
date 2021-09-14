@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {signup, RECEIVE_CURR_USER} from '../../actions/sessionsActions';
-import {useHistory} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { signup, RECEIVE_CURR_USER } from '../../actions/sessionsActions';
+import { useHistory } from 'react-router-dom';
 import Errors from '../Errors';
 
 function Onboarding(props) {
-  const {push, location} = useHistory();
+  const { push, location } = useHistory();
   const errors = useSelector((state) => state.errors);
   const dispatch = useDispatch();
   const [signupCreds, setCreds] = useState({
@@ -21,7 +21,6 @@ function Onboarding(props) {
       ...signupCreds,
       ...location.state,
     };
-    // console.log(request);
 
     dispatch(signup(request));
     if (errors.length > 0) {
@@ -52,7 +51,7 @@ function Onboarding(props) {
             type='fname'
             name='fname'
             id='fname'
-            onChange={(e) => setCreds({...signupCreds, fname: e.target.value})}
+            onChange={(e) => setCreds({ ...signupCreds, fname: e.target.value })}
             required
             value={signupCreds.fname}
           />
@@ -66,7 +65,7 @@ function Onboarding(props) {
             type='lname'
             name='lname'
             id='lname'
-            onChange={(e) => setCreds({...signupCreds, lname: e.target.value})}
+            onChange={(e) => setCreds({ ...signupCreds, lname: e.target.value })}
             required
             value={signupCreds.lname}
           />
@@ -79,9 +78,7 @@ function Onboarding(props) {
             type='username'
             name='username'
             id='username'
-            onChange={(e) =>
-              setCreds({...signupCreds, username: e.target.value})
-            }
+            onChange={(e) => setCreds({ ...signupCreds, username: e.target.value })}
             required
             value={signupCreds.username}
           />

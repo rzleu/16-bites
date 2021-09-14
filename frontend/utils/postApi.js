@@ -9,9 +9,29 @@ export const createPost = (post = {}) => {
   });
 };
 
+export const updatePost = (post = {}) => {
+  return $.ajax({
+    url: `/api/posts/${post.id}`,
+    method: 'PATCH',
+    data: { post },
+  });
+};
+
+export const deletePost = (id) => {
+  return $.ajax({
+    url: `/api/posts/${id}`,
+    method: 'DELETE',
+  });
+};
+
 export const fetchPosts = () =>
   $.ajax({
     url: '/api/posts',
+  });
+
+export const fetchUserPosts = (id) =>
+  $.ajax({
+    url: `/api/users/${id}`,
   });
 
 function getFormData(object) {

@@ -1,7 +1,6 @@
 import { RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/errorActions';
 
 const sessionErrorReducer = (state = [], action) => {
-  console.log(action);
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ERRORS:

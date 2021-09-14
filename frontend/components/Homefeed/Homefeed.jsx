@@ -8,6 +8,7 @@ import {
   faRocket,
   faWindowRestore,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import cardOne from 'Images/card-1.jpg';
 import cardTwo from 'Images/card-2.jpg';
 import cardThree from 'Images/card-3.jpg';
@@ -36,6 +37,7 @@ const communityCards = [
     title: "Editor's Choice",
     description: 'Photos selected by our Editors',
     photos: [cardTwo, cardThree, girl, cardOne],
+    path: '/editors',
   },
   {
     className: 'splash--banner-icon splash--banner-porfolio-icon',
@@ -43,6 +45,7 @@ const communityCards = [
     title: 'Featured Galleries',
     description: 'Best Galleries on 500px',
     photos: [cardTwo, cardThree, girl, cardOne],
+    path: '/galleries',
   },
   {
     className: 'splash--banner-icon splash--banner-rocket-icon',
@@ -50,6 +53,7 @@ const communityCards = [
     title: 'Quests',
     description: 'Photo contests to challenges you',
     photos: [cardTwo, cardThree, girl, cardOne],
+    path: '/quests',
   },
   {
     className: 'splash--banner-icon splash--banner-apple-icon',
@@ -57,6 +61,7 @@ const communityCards = [
     title: 'Resource Hub',
     description: 'Tools to grow your skills',
     photos: [cardTwo, cardThree, girl, cardOne],
+    path: '/resources',
   },
 ];
 
@@ -96,16 +101,16 @@ function Homefeed() {
               <div key={id} className='home--carousel-itm'>
                 <div className='img--wrapper'>
                   {photos.map((url, i) => (
-                    <a href='' key={i}>
+                    <Link to={`/photos/${url.id}`} key={i}>
                       <img src={url} alt='' />
-                    </a>
+                    </Link>
                   ))}
                 </div>
                 <div className='home--carousel-txt-content'>
-                  <a href='' className='nav--link item--links'>
+                  <Link to={`/photo/${id}`} className='nav--link item--links'>
                     <div>{fullName}</div>
                     <span>{location}</span>
-                  </a>
+                  </Link>
                   <button className='auth--btn'>Follow</button>
                 </div>
               </div>
@@ -121,25 +126,27 @@ function Homefeed() {
           </p>
           <div className='homefeed--explore-wrapper'>
             {communityCards.map(
-              ({ icon, title, description, photos, className }, i) => (
-                <div className='homefeed--card-item' key={i}>
-                  <div className='homefeed-card-title'>
-                    <div className={`${className} homefeed--card-icon `}>
-                      <FontAwesomeIcon icon={icon} />
-                    </div>
-                    <span>
-                      <div className='card--title'>{title}</div>
-                      <div className='card--description'>{description}</div>
-                    </span>
-                  </div>
-                  <div className='homefeed--card-photos'>
-                    {photos.map((photo, i) => (
-                      <div key={i} className='homefeed-img-wrapper'>
-                        <img src={photo} />
+              ({ icon, title, description, photos, className, path }, i) => (
+                <Link to={path} key={i}>
+                  <div className='homefeed--card-item'>
+                    <div className='homefeed-card-title'>
+                      <div className={`${className} homefeed--card-icon `}>
+                        <FontAwesomeIcon icon={icon} />
                       </div>
-                    ))}
+                      <span>
+                        <div className='card--title'>{title}</div>
+                        <div className='card--description'>{description}</div>
+                      </span>
+                    </div>
+                    <div className='homefeed--card-photos'>
+                      {photos.map((photo, i) => (
+                        <div key={i} className='homefeed-img-wrapper'>
+                          <img src={photo} />
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </Link>
               ),
             )}
           </div>

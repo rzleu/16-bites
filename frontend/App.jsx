@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
@@ -8,7 +9,8 @@ import Root from './components/Root';
 import ProtectedRoute from './components/ProtectedRoute';
 import Upload from './components/Upload';
 import Homefeed from './components/Homefeed';
-import { useSelector } from 'react-redux';
+import Manage from './components/Manage';
+import PostShow from './components/PostShow';
 
 function App() {
   const currentUser = useSelector((state) => state.session?.id);
@@ -28,8 +30,9 @@ function App() {
         <Route path='/onboarding' component={Onboarding} />
         <Route path='/login' component={Login} />
         <Route path='/signup' component={Signup} />
+        <Route path='/photo/:id' component={PostShow} />
         <ProtectedRoute path='/manage/upload' component={Upload} />
-        <Route path='/manage' />
+        <Route path='/manage' component={Manage} />
         <Route path='/' component={currentUser ? Homefeed : Root} />
       </Switch>
     </>

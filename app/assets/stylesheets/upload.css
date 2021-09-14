@@ -22,6 +22,7 @@ input[type='file'] {
   display: grid;
   place-items: center;
   padding-top: 4rem;
+  background: var(--lighterGrey);
 }
 
 .file--btn {
@@ -92,4 +93,45 @@ input[type='file'] {
   border-color: #ff0000;
   padding: 0.5em 2.25em;
   font-size: 1.1rem;
+}
+
+/* ========================================================================== 
+* UPLOAD WRAPPER
+========================================================================*/
+.upload--wrapper {
+  background: transparent;
+}
+
+.upload--wrapper img {
+  height: 20vw;
+  object-fit: cover;
+  padding: 5%;
+}
+input.upload--input {
+  border: 1px solid rgb(215, 216, 219);
+  background-color: rgb(255, 255, 255);
+}
+.upload--btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.upload--btn-wrapper > button {
+  background: transparent;
+  color: var(--primaryBlue);
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.25em;
+}
+
+.upload--btn-wrapper .auth--btn {
+  color: var(--white);
+  background-color: var(--primaryBlue);
+  width: 50%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.reset-modal--content > p {
+  margin: 0;
 }

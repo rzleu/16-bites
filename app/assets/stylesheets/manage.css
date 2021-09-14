@@ -1,0 +1,32 @@
+.manage--wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  min-height: 70vh;
+}
+
+.manage-bg {
+  background-color: var(--lighterGrey);
+  height: 90%;
+  width: 100%;
+  padding: 10%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 3.4fr 1fr;
+}
+
+.manage--img-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  gap: 2%;
+}
+
+.manage--upload > div {
+  display: initial;
+}
+
+.manage--active {
+  box-shadow: 0px 0px 0px 1px #ffffff, 0px 1px 0px 3px var(--primaryBlue);
+}

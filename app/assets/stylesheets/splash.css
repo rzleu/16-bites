@@ -1,13 +1,3 @@
-.background {
-  background-image: url('/assets/splash.jpg');
-  background-size: cover;
-  background-position: 100% 0%;
-  max-height: 65vh;
-  width: 100%;
-  position: relative;
-  /* h:a */
-}
-
 .wave {
   position: absolute;
   bottom: 0;
@@ -153,10 +143,6 @@
 /* =====================================================
 * BANNERS 
 ================================================================*/
-.splash--section-three {
-  grid-row: 1/50;
-  background: url('/assets/banner_one.png') 35% 0% / cover no-repeat;
-}
 
 .splash--banner {
   min-height: 400px;
@@ -177,22 +163,6 @@
   font-size: 3.75rem;
   position: absolute;
   bottom: 5%;
-}
-
-.splash--section-five-banner {
-  background: url('/assets/banner_four.png') 25% 75% / cover no-repeat;
-}
-
-.splash--section-six-banner {
-  background: url('/assets/banner_five.png') center/ cover no-repeat;
-}
-
-.splash--section-seven-banner {
-  background: url('/assets/banner_six.png') center/ cover no-repeat;
-}
-
-.splash--section-eight-banner {
-  background: url('/assets/banner_seven.png') center/ cover no-repeat;
 }
 
 .splash--section-nine {

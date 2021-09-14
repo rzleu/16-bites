@@ -34,7 +34,7 @@ function App() {
         <Route path='/photo/:id' component={PostShow} />
         <ProtectedRoute path='/manage/upload' component={Upload} />
         <Route path='/manage' component={Manage} />
-        <Route path='/profile' component={Profile} />
+        <Route path='/user/:id' component={Profile} />
         <Route path='/' component={currentUser ? Homefeed : Root} />
       </Switch>
     </>

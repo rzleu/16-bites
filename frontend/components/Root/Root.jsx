@@ -15,14 +15,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import AppleStore from 'Images/apple_store.svg';
 import GooglePlay from 'Images/google-play-badge.svg';
-import devices from 'Images/devices.png';
-import portfolio from 'Images/portfiolio.png';
-import quests from 'Images/quests.png';
-import licensing from 'Images/licensing.jpg';
-import cardOne from 'Images/card-1.jpg';
-import cardTwo from 'Images/card-2.jpg';
-import cardThree from 'Images/card-3.jpg';
-import cardFour from 'Images/card-4.jpg';
 import Footer from '../Footer';
 import Card from '../Card';
 import Editor from '../RootComponents/Editor';
@@ -98,7 +90,7 @@ function Root() {
           <div className='splash--curve-yellow' />
           <div className='splash--devices'>
             <img
-              src={devices}
+              src={window.devices}
               alt='devices'
               style={{ maxHeight: '340px', maxWidth: '340px' }}
             />
@@ -149,7 +141,7 @@ function Root() {
                 Get Started
               </Link>
 
-              <img src={portfolio} alt='portfolio' className='img--large' />
+              <img src={window.portfiolio} alt='portfolio' className='img--large' />
             </div>
           </>
 
@@ -175,28 +167,28 @@ function Root() {
 
               <div className='card--wrapper'>
                 <Card
-                  image={cardOne}
+                  image={window.cardOne}
                   title='Landscape Photography Tutorial'
                   tags={['Article', 'Online', 'Free']}
                   footerTitle='Anthill499'
                 />
 
                 <Card
-                  image={cardTwo}
+                  image={window.cardTwo}
                   title='How to shoot fine art on homel'
                   tags={['Video', 'Online', 'Free']}
                   footerTitle='ahumanpinto'
                 />
 
                 <Card
-                  image={cardThree}
+                  image={window.cardThree}
                   title='Shooting Balancing Photos with E.'
                   tags={['Podcast', 'Online', 'Free']}
                   footerTitle='literal_monkey_monk'
                 />
 
                 <Card
-                  image={cardFour}
+                  image={window.cardFour}
                   title='Great Big Photography World Pod...'
                   tags={['Podcast', 'Online', 'Free']}
                   footerTitle='checkin_man'
@@ -228,7 +220,7 @@ function Root() {
                   View Quests
                 </Link>
               </div>
-              <img src={quests} alt='quests' className='img--large' />
+              <img src={window.quests} alt='quests' className='img--large' />
             </div>
           </>
 
@@ -242,7 +234,7 @@ function Root() {
             </div>
 
             <div className='splash--banner-content quest--content'>
-              <img src={licensing} alt='licensing' className='img--large' />
+              <img src={window.licensing} alt='licensing' className='img--large' />
               <div>
                 <FontAwesomeIcon icon={faPiggyBank} size='4x' />
                 <h3>Get paid for your photos</h3>

@@ -1,9 +1,9 @@
 import React from 'react';
 import AppleStore from 'Images/apple_store.svg';
 import GooglePlay from 'Images/google-play-badge.svg';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import {faEnvelope, faCopyright} from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faCopyright } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebookF,
   faLinkedinIn,
@@ -14,11 +14,15 @@ function Footer() {
     <footer>
       <div className='footer--wrapper'>
         <div>
-          <h4>Company</h4>
+          <h4>Skills</h4>
           <ul>
-            <li>Newsroom</li>
-            <li>About us</li>
-            <li>Careers</li>
+            <li>Javascript</li>
+            <li>React</li>
+            <li>Ruby on Rails</li>
+            <li>Python</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Git</li>
           </ul>
         </div>
 
@@ -50,10 +54,7 @@ function Footer() {
           <ul>
             <li>
               <FontAwesomeIcon icon={faFacebookF} />
-              <a
-                target='_blank'
-                href='https://www.facebook.com/richardleung13/'
-              >
+              <a target='_blank' href='https://www.facebook.com/richardleung13/'>
                 Facebook
               </a>
             </li>
@@ -65,10 +66,7 @@ function Footer() {
             </li>
             <li>
               <FontAwesomeIcon icon={faLinkedinIn} />
-              <a
-                target='_blank'
-                href='https://www.linkedin.com/in/richardzleung/'
-              >
+              <a target='_blank' href='https://www.linkedin.com/in/richardzleung/'>
                 Linkedin
               </a>
             </li>
@@ -95,7 +93,7 @@ function Footer() {
       </div>
       <div className='footer--end'>
         <h4>
-          <FontAwesomeIcon icon={faCopyright} style={{marginRight: '8px'}} />
+          <FontAwesomeIcon icon={faCopyright} style={{ marginRight: '8px' }} />
           16 bites
         </h4>
         <ul>

@@ -36,7 +36,6 @@ const navLinks = [
 
 const loggedinLinks = [
   {
-    path: '/profile',
     text: 'Profile',
   },
   {
@@ -54,6 +53,7 @@ const loggedinLinks = [
 ];
 
 export default function Navbar() {
+  const id = useSelector((state) => state.session.id);
   const dispatch = useDispatch();
   const history = useHistory();
   const [isOpen, setIsOpen] = useState(null);
@@ -119,7 +119,7 @@ export default function Navbar() {
                   <FontAwesomeIcon icon={faUser} size='2x' />
                   {isOpen && (
                     <ul className='nav--dropdown'>
-                      {loggedinLinks.map(({ path, text }, i) => (
+                      {loggedinLinks.map(({ path = `/user/${id}`, text }, i) => (
                         <div key={i}>
                           <Link
                             to={path}

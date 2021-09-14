@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchPosts } from '../../actions/postActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -9,10 +9,10 @@ import {
   faWindowRestore,
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import cardOne from 'Images/card-1.jpg';
-import cardTwo from 'Images/card-2.jpg';
-import cardThree from 'Images/card-3.jpg';
-import cardFour from 'Images/card-4.jpg';
+import cardOne from 'Images/card-1.webp';
+import cardTwo from 'Images/card-2.webp';
+import cardThree from 'Images/card-3.webp';
+import cardFour from 'Images/card-4.webp';
 import girl from 'Images/girl.jpg';
 
 const photos = [
@@ -21,12 +21,14 @@ const photos = [
     photos: [cardTwo, cardThree, girl],
     fullName: 'Tatiana Koshutina',
     location: 'Екатеринбург, Свердловская об',
+    user_id: 2,
   },
   {
     id: 2,
     photos: [cardOne, cardFour],
     fullName: 'Łukasz Wiatrowski',
     location: 'Kraków',
+    user_id: 1,
   },
 ];
 
@@ -97,7 +99,7 @@ function Homefeed() {
           </div>
 
           <div className='home--carousel'>
-            {photos.map(({ id, photos, fullName, location = '' }) => (
+            {photos.map(({ id, photos, fullName, location = '', user_id }) => (
               <div key={id} className='home--carousel-itm'>
                 <div className='img--wrapper'>
                   {photos.map((url, i) => (
@@ -107,7 +109,7 @@ function Homefeed() {
                   ))}
                 </div>
                 <div className='home--carousel-txt-content'>
-                  <Link to={`/photo/${id}`} className='nav--link item--links'>
+                  <Link to={`/user/${user_id}`} className='nav--link item--links'>
                     <div>{fullName}</div>
                     <span>{location}</span>
                   </Link>

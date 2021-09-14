@@ -103,9 +103,12 @@ input[type='file'] {
 }
 
 .upload--wrapper img {
-  height: 20vw;
+  height: calc(15vw - 1px);
   object-fit: cover;
-  padding: 5%;
+  padding: 2.5%;
+  width: auto;
+  max-height: 430px;
+  /* max-width: 400px; */
 }
 input.upload--input {
   border: 1px solid rgb(215, 216, 219);
@@ -134,4 +137,37 @@ input.upload--input {
 
 .reset-modal--content > p {
   margin: 0;
+}
+
+.upload--btn-wrapper > button.error-btn {
+  background-color: var(--white);
+  color: #cc0000;
+  border: 3px solid #cc0000;
+  padding: 0;
+}
+
+button.error-btn:active {
+  background-color: #cc0000;
+}
+
+.create--photo {
+  position: relative;
+}
+.create--photo::before {
+  position: absolute;
+  content: attr(title);
+  color: var(--mediumGrey);
+  width: 100%;
+  min-height: 10%;
+  left: 4%;
+  bottom: -5px;
+}
+.upload--subheader {
+  padding-left: 4rem;
+}
+.upload--subheader > .homefeed-home-btn {
+  display: inline-flex;
+  align-items: flex-end;
+  white-space: nowrap;
+  gap: 5%;
 }

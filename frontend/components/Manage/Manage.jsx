@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImages } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from 'react-redux';
@@ -17,6 +18,7 @@ function Manage() {
     id: '',
     doesExist: true,
   });
+
   const currUser = useSelector((state) => state.session.id);
   const userPosts = useSelector((state) => state.posts.userPosts);
   const dispatch = useDispatch();
@@ -33,33 +35,50 @@ function Manage() {
   return (
     <div>
       <h2 className='upload--header '>Photo manager</h2>
-      <div className='manage-bg'>
-        <div className='manage--img-wrapper'>
-          {userPosts.map((post) => (
-            <button
-              key={post.id}
-              onClick={() => {
-                setCurrPhoto((old) => ({ ...old, ...post }));
-              }}
-              className='upload--wrapper'
-            >
-              <img src={post.photoUrl} />
-            </button>
-          ))}
-        </div>
-
-        <div className='manage--upload'>
-          <UploadForm postFields={currPhoto} formType='UPDATE' key={currPhoto.id} />
-        </div>
-        {userPosts.length === 0 && (
-          <div className='manage--wrapper'>
-            <FontAwesomeIcon icon={faImages} size='3x' />
-            <p>You haven't submitted any photos to Licensing</p>
-            <p>Submit some photos and they’ll appear here.</p>
-            <button className='auth--btn file--btn'>Upload</button>
-          </div>
-        )}
+      <div className='upload--subheader '>
+        <span className='homefeed-home-btn'>
+          <FontAwesomeIcon icon={faImages} size='2x' />
+          All photos
+        </span>
       </div>
+
+      {userPosts.length === 0 ? (
+        <div className='manage--wrapper'>
+          <FontAwesomeIcon icon={faImages} size='3x' />
+          <span>You have no photos</span>
+          <span>Upload some photos and they’ll appear here.</span>
+          <Link to='/manage/upload' className='auth--btn file--btn'>
+            Upload
+          </Link>
+        </div>
+      ) : (
+        <div className='manage-bg'>
+          <div className='manage--img-wrapper'>
+            {userPosts.map((post) => (
+              <button
+                key={post.id}
+                onClick={() => {
+                  setCurrPhoto((old) => ({ ...old, ...post }));
+                }}
+                className={classNames({
+                  'upload--wrapper': true,
+                  'manage--active': post.id === currPhoto.id,
+                })}
+              >
+                <img src={post.photoUrl} />
+              </button>
+            ))}
+          </div>
+
+          <div className='manage--upload'>
+            <UploadForm
+              postFields={currPhoto}
+              formType='UPDATE'
+              key={currPhoto.id}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

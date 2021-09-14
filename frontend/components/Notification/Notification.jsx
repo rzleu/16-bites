@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 function Notification({ message }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -11,12 +11,15 @@ function Notification({ message }) {
     }
     return () => clearTimeout(clearNotification);
   }, []);
-
+  console.log({ message });
   return (
     <ul>
       {isOpen && (
-        <div className='errors--wrapper'>
-          <FontAwesomeIcon icon={faTimes} style={{ color: '#039487' }} />
+        <div
+          className='errors--wrapper'
+          style={{ color: '#5cb85c ', backgroundColor: 'var(--veryDarkGrey)' }}
+        >
+          <FontAwesomeIcon icon={faCheckCircle} />
           {message}
         </div>
       )}

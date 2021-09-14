@@ -5,8 +5,8 @@ import {
 } from '../actions/postActions';
 
 const initialState = {
-  allPosts: null,
-  userPosts: null,
+  allPosts: [],
+  userPosts: [],
 };
 
 const postReducer = (state = initialState, { type, payload }) => {

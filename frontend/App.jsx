@@ -11,6 +11,7 @@ import Upload from './components/Upload';
 import Homefeed from './components/Homefeed';
 import Manage from './components/Manage';
 import PostShow from './components/PostShow';
+import Profile from './components/Profile';
 
 function App() {
   const currentUser = useSelector((state) => state.session?.id);
@@ -33,6 +34,7 @@ function App() {
         <Route path='/photo/:id' component={PostShow} />
         <ProtectedRoute path='/manage/upload' component={Upload} />
         <Route path='/manage' component={Manage} />
+        <Route path='/profile' component={Profile} />
         <Route path='/' component={currentUser ? Homefeed : Root} />
       </Switch>
     </>

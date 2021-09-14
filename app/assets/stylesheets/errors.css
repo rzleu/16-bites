@@ -1,14 +1,19 @@
-.errors--wrapper {
+.errors--wrapper,
+.notification--wrapper {
   color: var(--negativeRed);
-  display: flex;
+  display: inline-flex;
   font-size: 1.1rem;
   font-weight: 600;
   gap: 8px;
   position: absolute;
   left: 0;
   right: 0;
-  top: 17%;
+  top: 0;
   margin-left: auto;
   margin-right: auto;
-  max-width: 500px;
+  width: fit-content;
+  padding: 2rem 2rem;
+  min-height: 2rem;
+  align-items: center;
+  z-index: 5000;
 }

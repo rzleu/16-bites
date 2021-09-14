@@ -34,7 +34,8 @@ label {
   margin-bottom: -5px;
 }
 
-input:not([type='submit']) {
+input:not([type='submit']),
+textarea {
   border: 1px solid rgb(215, 216, 219);
   border-radius: 4px;
   height: 44px;

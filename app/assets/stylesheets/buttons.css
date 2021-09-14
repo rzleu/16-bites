@@ -23,8 +23,9 @@ button {
   border-radius: 28px;
   max-height: 48px;
   text-align: center;
-  padding: 12px 22px;
+  /* padding: 12px 22px; */
   width: 100%;
+  padding: 0;
 }
 
 .auth--btn:hover {

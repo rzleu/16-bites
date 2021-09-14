@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { faExclamationTriangle, faImages } from '@fortawesome/free-solid-svg-icons';
 import { deletePost } from '../../actions/postActions';
 
 import Dropdown from '../Dropdown';
@@ -61,9 +61,7 @@ function UploadForm({
   const createPost = (e) => {
     e.preventDefault();
     PostAPiUtils.createPost(photoFields).then(() => {
-      if (!notification) {
-        setNotification('Post Successfully Created');
-      }
+      setNotification('Post Successfully Created');
     });
   };
 
@@ -78,19 +76,27 @@ function UploadForm({
   const deleteUserPost = (e) => {
     e.preventDefault();
     dispatch(deletePost(postFields.id));
+    setNotification('Post Successfully Deleted');
     setShowCancel(false);
   };
 
   return (
     <>
+      {formType === 'CREATE' && (
+        <div className='upload--subheader '>
+          <span className='homefeed-home-btn'>
+            <FontAwesomeIcon icon={faImages} size='2x' />
+            All photos
+          </span>
+        </div>
+      )}
       {notification && <Notification message={notification} />}
       <div className='photo--edit-form'>
         {/* LEFT BAR */}
         {formType === 'CREATE' && (
           <div className='upload--wrapper'>
-            <div>
-              <img src={photo.photoUrl} alt='' />
-              {photoFields.title}
+            <div className='create--photo' title={photoFields.title}>
+              <img src={photo.photoUrl} alt='photo' />
             </div>
           </div>
         )}
@@ -113,8 +119,7 @@ function UploadForm({
             />
 
             <label htmlFor='upload--description'>Description</label>
-            <input
-              type='text'
+            <textarea
               id='upload--description'
               onChange={(e) => handleChange('description', e.target.value)}
               value={photoFields.description}
@@ -137,7 +142,11 @@ function UploadForm({
             />
 
             <div className='upload--btn-wrapper'>
-              <button type='reset' onClick={() => setShowCancel((old) => !old)}>
+              <button
+                type='reset'
+                onClick={() => setShowCancel((old) => !old)}
+                className='auth--btn error-btn'
+              >
                 {formType === 'CREATE' ? 'Cancel' : 'Delete'}
               </button>
               <button type='submit' className='auth--btn'>
@@ -174,12 +183,10 @@ function UploadForm({
                       <p>
                         Photo will be permanently deleted from All photos library.
                       </p>
-                      <p>
-                        Photo will not be removed from 500px Licensing if it's been
-                        submitted.
-                      </p>
+
                       <button
                         type='button'
+                        style={{ margin: '25px' }}
                         onClick={(e) => deleteUserPost(e)}
                         className='btn--reverse-color started--btn photo--leave-btn'
                       >

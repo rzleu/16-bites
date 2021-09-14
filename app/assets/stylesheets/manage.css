@@ -4,29 +4,42 @@
   align-items: center;
   gap: 2rem;
   min-height: 70vh;
+  grid-column: 1 / 2;
+  grid-row-start: 1;
 }
 
 .manage-bg {
   background-color: var(--lighterGrey);
   height: 90%;
   width: 100%;
-  padding: 10%;
+  padding: 5%;
   position: absolute;
   display: grid;
   grid-template-columns: 3.4fr 1fr;
 }
 
 .manage--img-wrapper {
+  margin-right: 5%;
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
   gap: 2%;
+  overflow-y: scroll;
+  padding: 1%;
 }
-
+.manage--upload {
+  grid-row-start: 1;
+  grid-column: 2;
+}
 .manage--upload > div {
   display: initial;
 }
 
 .manage--active {
-  box-shadow: 0px 0px 0px 1px #ffffff, 0px 1px 0px 3px var(--primaryBlue);
+  outline: 2px solid var(--primaryBlue);
+}
+
+.manage--wrapper span:first-of-type {
+  font-weight: 700;
+  font-size: 1.2rem;
 }

@@ -20,6 +20,11 @@ class Api::UsersController < ApplicationController
       render json: ['ok'], status: :ok
     end
   end
+
+  def show
+    @user = User.find(params[:id])
+    render 'api/users/show'
+  end
   private
 
   def user_params

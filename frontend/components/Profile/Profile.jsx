@@ -2,23 +2,45 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchUserPosts } from '../../utils/postApi';
+import { createFollow, deleteFollow, showFollows } from '../../utils/followApi';
 
 function Profile() {
+  const [isFollowing, setIsFollowing] = useState(false);
   const [profileInfo, setProfileInfo] = useState({
     fname: '',
     lname: '',
     posts: [],
     avatarUrl: 'https://avatars.dicebear.com/api/avataaars/:seed.svg',
   });
+  const { id: currUser } = useSelector((state) => state.session);
   const { id } = useParams();
-  const userPosts = useSelector((state) => state.posts.userPosts);
 
   useEffect(() => {
     fetchUserPosts(id).then((response) => {
       setProfileInfo((old) => ({ ...old, ...response }));
     });
-  }, []);
-  console.log({ profileInfo });
+
+    showFollows(id).then((response) => {
+      if (response.some(({ follower_id }) => follower_id == currUser)) {
+        setIsFollowing(true);
+      }
+    });
+  }, [currUser, id]);
+
+  const handleFollow = () => {
+    const obj = { follower_id: currUser, followee_id: id };
+
+    if (!isFollowing) {
+      createFollow(obj).then(() => {
+        setIsFollowing(true);
+      });
+    } else {
+      deleteFollow(obj).then(() => {
+        setIsFollowing(false);
+      });
+    }
+  };
+  console.log(isFollowing);
 
   return (
     <div className='profile-wrap'>
@@ -32,7 +54,15 @@ function Profile() {
               {profileInfo.fname} {profileInfo.lname}
             </h2>
             <span>{profileInfo.lname}</span>
-            <button className='auth--btn'>Follow</button>
+            {isFollowing ? (
+              <button className='auth--btn' onClick={handleFollow}>
+                Unfollow
+              </button>
+            ) : (
+              <button className='auth--btn' onClick={handleFollow}>
+                Follow
+              </button>
+            )}
           </div>
           <div>
             <div>

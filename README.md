@@ -1,6 +1,6 @@
 # 16 Bites
 
-- 16 Bites is a clone of [16 bites](https://16 bites.com/)
+- 16 Bites is a clone of [500px.com](https://500px.com/)
 
 ## Timeline
 

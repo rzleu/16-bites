@@ -12,7 +12,7 @@
   background-color: var(--lighterGrey);
   height: 90%;
   width: 100%;
-  padding: 5%;
+  padding: 2% 5%;
   position: absolute;
   display: grid;
   grid-template-columns: 3.4fr 1fr;
@@ -36,7 +36,7 @@
 }
 
 .manage--active {
-  outline: 2px solid var(--primaryBlue);
+  outline: 8px double var(--primaryBlue);
 }
 
 .manage--wrapper span:first-of-type {

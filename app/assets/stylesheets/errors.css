@@ -17,3 +17,9 @@
   align-items: center;
   z-index: 5000;
 }
+
+input:invalid {
+  color: var(--negativeRed);
+  border: 1px solid var(--negativeRed) !important;
+  outline: none;
+}

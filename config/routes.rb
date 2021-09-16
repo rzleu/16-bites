@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :posts, only: %i(show create index destroy update)
     resources :users, only: %i(create show)
     resource :session, only: %i(create destroy)
-    resources :follows, only: %i(index create destroy)
+    resources :follows, only: %i( show create destroy)
   end
   
 end

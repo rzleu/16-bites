@@ -45,7 +45,7 @@ const communityCards = [
     className: 'splash--banner-icon splash--banner-porfolio-icon',
     icon: faWindowRestore,
     title: 'Featured Galleries',
-    description: 'Best Galleries on 500px',
+    description: 'Best Galleries on 16 bites',
     photos: [cardTwo, cardThree, girl, cardOne],
     path: '/galleries',
   },
@@ -88,7 +88,7 @@ function Homefeed() {
 
       <div className='homefeed--content homefeed--container-pad '>
         <div className='homefeed--welcome-msg'>
-          <div>Welcome to 500px</div>
+          <div>Welcome to 16 bites</div>
           <span>Follow photographers to get started</span>
         </div>
 

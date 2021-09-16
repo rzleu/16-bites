@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle, faImages } from '@fortawesome/free-solid-svg-icons';
-import { deletePost } from '../../actions/postActions';
+import {
+  deletePost,
+  updatePost as updatePostAction,
+} from '../../actions/postActions';
 
 import Dropdown from '../Dropdown';
 import { categoryOptions } from '../../constants';
@@ -27,7 +30,8 @@ function UploadForm({
   resetPhoto = (e) => e,
   formType,
 }) {
-  const currUser = useSelector((state) => state.session.id);
+  const currUser = useSelector((state) => state.session);
+  const [isDisabled, setIsDisabled] = useState(false);
   const dispatch = useDispatch();
   const [photoFields, setPhotoFields] = useState({
     title: formType === 'CREATE' ? photo.title : postFields.title,
@@ -62,15 +66,23 @@ function UploadForm({
     e.preventDefault();
     PostAPiUtils.createPost(photoFields).then(() => {
       setNotification('Post Successfully Created');
+      setIsDisabled(true);
     });
   };
 
   const updatePost = (e) => {
     e.preventDefault();
     const { photo, ...rest } = photoFields;
-    PostAPiUtils.updatePost(rest).then(() =>
-      setNotification('Post Successfully Updated'),
-    );
+    // PostAPiUtils.updatePost(rest).then(() =>
+    //   setNotification('Post Successfully Updated'),
+    // );
+    // dispatch(updatePostAction(rest)).then((what) => {
+    //   setNotification('Post Successfully Updated');
+    //   console.log(what);
+    // });
+    updatePostAction(rest)(dispatch).then(() => {
+      setNotification('Post Successfully Updated');
+    });
   };
 
   const deleteUserPost = (e) => {
@@ -79,7 +91,6 @@ function UploadForm({
     setNotification('Post Successfully Deleted');
     setShowCancel(false);
   };
-
   return (
     <>
       {formType === 'CREATE' && (
@@ -108,38 +119,45 @@ function UploadForm({
               formType === 'CREATE' ? (e) => createPost(e) : (e) => updatePost(e)
             }
           >
-            <label htmlFor='upload--title'>Title</label>
-            <input
-              type='text'
-              id='upload--title'
-              onChange={(e) => handleChange('title', e.target.value)}
-              value={photoFields.title}
-              required={true}
-              className='upload--input'
-            />
+            <div>
+              <label htmlFor='upload--title'>Title</label>
+              <input
+                type='text'
+                id='upload--title'
+                onChange={(e) => handleChange('title', e.target.value)}
+                value={photoFields.title}
+                required={true}
+                className='upload--input'
+              />
+            </div>
+            <div>
+              <label htmlFor='upload--description'>Description</label>
+              <textarea
+                id='upload--description'
+                onChange={(e) => handleChange('description', e.target.value)}
+                value={photoFields.description}
+                className='upload--input'
+              />
+            </div>
 
-            <label htmlFor='upload--description'>Description</label>
-            <textarea
-              id='upload--description'
-              onChange={(e) => handleChange('description', e.target.value)}
-              value={photoFields.description}
-              className='upload--input'
-            />
+            <div>
+              <label htmlFor='upload--location'>Location</label>
+              <input
+                type='text'
+                id='upload--location'
+                onChange={(e) => handleChange('location', e.target.value)}
+                value={photoFields.location}
+                className='upload--input'
+              />
+            </div>
 
-            <label htmlFor='upload--location'>Location</label>
-            <input
-              type='text'
-              id='upload--location'
-              onChange={(e) => handleChange('location', e.target.value)}
-              value={photoFields.location}
-              className='upload--input'
-            />
-
-            <Dropdown
-              list={categoryOptions}
-              title='Categories'
-              handleClick={(category) => handleChange('category', category)}
-            />
+            <div>
+              <Dropdown
+                list={categoryOptions}
+                title='Categories'
+                handleClick={(category) => handleChange('category', category)}
+              />
+            </div>
 
             <div className='upload--btn-wrapper'>
               <button
@@ -149,9 +167,15 @@ function UploadForm({
               >
                 {formType === 'CREATE' ? 'Cancel' : 'Delete'}
               </button>
-              <button type='submit' className='auth--btn'>
-                {formType === 'CREATE' ? 'Upload' : 'Update'}
-              </button>
+              {formType === 'CREATE' ? (
+                <button type='submit' className='auth--btn' disabled={isDisabled}>
+                  Upload
+                </button>
+              ) : (
+                <button type='submit' className='auth--btn'>
+                  Update
+                </button>
+              )}
             </div>
 
             {/* RESET FORM MODAL */}

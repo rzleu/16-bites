@@ -12,6 +12,10 @@ function Profile() {
     posts: [],
     avatarUrl: 'https://avatars.dicebear.com/api/avataaars/:seed.svg',
   });
+  const [followInfo, setFollowInfo] = useState({
+    followingList: [],
+    followerList: [],
+  });
   const { id: currUser } = useSelector((state) => state.session);
   const { id } = useParams();
 
@@ -24,6 +28,7 @@ function Profile() {
       if (response.some(({ follower_id }) => follower_id == currUser)) {
         setIsFollowing(true);
       }
+      // const followList = response.map(({ follower_id}) => )
     });
   }, [currUser, id]);
 
@@ -40,7 +45,6 @@ function Profile() {
       });
     }
   };
-  console.log(isFollowing);
 
   return (
     <div className='profile-wrap'>

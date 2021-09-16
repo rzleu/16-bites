@@ -39,7 +39,7 @@ function Onboarding(props) {
   return (
     <section className='login--section'>
       <div className='login--wrapper'>
-        <h2>Welcome to 500px. Let’s get to know you a little.</h2>
+        <h2>Welcome to 16 bites. Let’s get to know you a little.</h2>
         <form onSubmit={handleSubmit}>
           <Errors errors={errors} />
           <label htmlFor='fname' className='login--label'>

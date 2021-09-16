@@ -156,8 +156,9 @@
   display: flex;
   flex-flow: row wrap;
   gap: 1.5%;
-  overflow: hidden;
-  justify-content: center;
+  /* overflow: hidden; */
+  justify-content: space-between;
+  padding: 0.1% 0 7% 0;
 }
 .homefeed--card-photos {
   display: grid;

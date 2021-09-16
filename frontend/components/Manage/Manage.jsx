@@ -61,7 +61,7 @@ function Manage() {
                   setCurrPhoto((old) => ({ ...old, ...post }));
                 }}
                 className={classNames({
-                  'upload--wrapper': true,
+                  'upload--wrapper-manage': true,
                   'manage--active': post.id === currPhoto.id,
                 })}
               >

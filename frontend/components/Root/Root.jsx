@@ -75,7 +75,7 @@ function Root() {
             <h2>Get the App</h2>
             <p>
               Join our community of over 16 million like-minded photographers.
-              Download the 500px app for Android and iOS today!
+              Download the 16 bites app for Android and iOS today!
             </p>
 
             <div className='splash--badges'>
@@ -114,7 +114,11 @@ function Root() {
               Our editors are always on the lookout for jaw dropping content for you
               to discover and stay inspired. Check back weekly to see what’s new.
             </p>
-            <Link to='/editors' className='btn--reverse-color editors-choice-btn'>
+            <Link
+              to='/editors'
+              className='btn--reverse-color editors-choice-btn'
+              style={{ pointerEvents: 'none' }}
+            >
               View Editors&apos; Choice
             </Link>
 
@@ -157,9 +161,9 @@ function Root() {
             <div className='splash--banner-content'>
               <h3>Discover something new</h3>
               <p>
-                Browse videos, articles, workshops, and presets from 500px users to
-                discover new areas of photography and grow your skills. Become a Pro
-                member to list your Resources in the Hub.
+                Browse videos, articles, workshops, and presets from 16 bites users
+                to discover new areas of photography and grow your skills. Become a
+                Pro member to list your Resources in the Hub.
               </p>
               <Link to='/portfolio' className='btn--reverse-color started--btn'>
                 View Resource Hub
@@ -240,7 +244,7 @@ function Root() {
                 <h3>Get paid for your photos</h3>
                 <p>
                   Don’t let your photos sit there gathering dust, like on other
-                  platforms. Gain exposure and get paid for your work with 500px
+                  platforms. Gain exposure and get paid for your work with 16 bites
                   Licensing. You&aposll earn 60% royalties (one of the
                   industry&apos;s highest rates) when you license your photos
                   exclusively with our global distribution partners.

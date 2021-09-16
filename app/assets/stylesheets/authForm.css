@@ -8,6 +8,8 @@ form {
   align-items: center;
   flex: 1 0 600px;
   position: relative;
+  padding: 2%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .login--section {
@@ -15,15 +17,26 @@ form {
   min-height: 90vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  background-color: var(--lighterGrey);
+  border: 1px solid var(--white);
+  border-radius: 4px;
 }
 
+.login--section > div {
+  max-width: 400px;
+}
+
+.login--wrapper {
+  background-color: var(--white);
+}
 .auth--header {
   margin-bottom: 1.5rem;
 }
 
 form {
-  width: 25%;
-  gap: 1rem;
+  width: 100%;
+  gap: 0.75rem;
 }
 
 form > * {
@@ -40,8 +53,9 @@ textarea {
   border-radius: 4px;
   height: 44px;
   font-size: 1rem;
-
+  resize: none;
   padding: 12px 16px;
+  width: 100%;
 }
 
 input:not([type='submit']) {
@@ -71,4 +85,8 @@ input:not([type='submit']) {
   left: 120%;
   top: 50%;
   position: absolute;
+}
+
+.login--wrapper > h2 {
+  margin: 0;
 }

@@ -15,16 +15,18 @@ function Errors({ errors }) {
   }, [errors, history, dispatch]);
 
   return (
-    <ul>
+    <>
       {errors?.length > 0 && (
-        <div className='errors--wrapper'>
-          <FontAwesomeIcon icon={faTimes} style={{ color: '#ff0033' }} />
-          {errors.map((error, idx) => (
-            <li key={`${error}-${idx}`}>{error}</li>
-          ))}
-        </div>
+        <ul>
+          <div className='errors--wrapper'>
+            <FontAwesomeIcon icon={faTimes} style={{ color: '#ff0033' }} />
+            {errors.map((error, idx) => (
+              <li key={`${error}-${idx}`}>{error}</li>
+            ))}
+          </div>
+        </ul>
       )}
-    </ul>
+    </>
   );
 }
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { login } from '../../actions/sessionsActions';
 import Errors from '../Errors';
 import { checkEmailUniquess } from '../../utils/sessionApi';
@@ -53,7 +53,7 @@ function Signup() {
   return (
     <section className='login--section'>
       <div className='login--wrapper'>
-        <h2>Sign up with Apple, Facebook or Google</h2>
+        <h2>Sign up</h2>
         <Errors errors={errors} />
         <form onSubmit={handleSubmit}>
           <label htmlFor='email' className='login--label'>
@@ -83,7 +83,7 @@ function Signup() {
             value={signupCreds.password}
           />
 
-          <button type='submit' className='auth--btn'>
+          <button type='submit' className='auth--btn' style={{ marginTop: '5px' }}>
             Sign Up
           </button>
         </form>
@@ -91,6 +91,12 @@ function Signup() {
         <button type='button' className='auth--btn demo--btn' onClick={demoSubmit}>
           Demo User
         </button>
+        <div>
+          Already have an account?{' '}
+          <Link to='/login' className='signup--redirect'>
+            Log in
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -34,7 +34,7 @@ export const fetchUsersPosts = (id) => (dispatch) =>
   );
 
 export const updatePost = (post) => (dispatch) =>
-  PostApiUtil.updatePost(post).then((response) => dispatch(response));
+  PostApiUtil.updatePost(post).then((response) => dispatch(receivePosts(response)));
 
 export const deletePost = (id) => (dispatch) =>
   PostApiUtil.deletePost(id).then(() => dispatch(deleteUserPost(id)));

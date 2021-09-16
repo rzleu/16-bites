@@ -1,6 +1,10 @@
 button {
   border: 0;
 }
+button:disabled {
+  background: var(--mediumGrey) !important;
+  border: 1px solid var(--mediumGrey) !important;
+}
 
 .log,
 .nav--button {
@@ -85,8 +89,9 @@ button {
 
 .demo--btn {
   margin-top: 0.5rem;
+  margin-bottom: 1rem;
   /* max-width: 270px; */
-  width: 25%;
+  width: 100%;
 }
 
 .btn--icon {
@@ -119,4 +124,12 @@ button {
 
 button {
   cursor: pointer;
+}
+
+.signup--redirect {
+  color: var(--primaryBlue);
+}
+
+.signup--redirect:hover {
+  border-bottom: 1px solid var(--primaryBlue);
 }

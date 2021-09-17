@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faUser } from '@fortawesome/free-solid-svg-icons';
+import { CSSTransition } from 'react-transition-group';
 import Logo from 'Images/logo.svg';
 import { logout } from '../../actions/sessionsActions';
 import useOutsideClick from '../../hooks/useOutsideClick';
@@ -117,7 +118,12 @@ export default function Navbar() {
                   }}
                 >
                   <FontAwesomeIcon icon={faUser} size='2x' />
-                  {isOpen && (
+                  <CSSTransition
+                    in={isOpen}
+                    timeout={1000}
+                    classNames='navbar-ani'
+                    unmountOnExit
+                  >
                     <ul className='nav--dropdown'>
                       {loggedinLinks.map(({ path = `/user/${id}`, text }, i) => (
                         <div key={i}>
@@ -130,7 +136,7 @@ export default function Navbar() {
                         </div>
                       ))}
                     </ul>
-                  )}
+                  </CSSTransition>
                 </button>
                 <Link
                   to='/manage/upload'

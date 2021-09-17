@@ -34,7 +34,6 @@ function Upload() {
       });
     };
 
-    // debugger;
     if (file) {
       fileReader.readAsDataURL(file);
     }

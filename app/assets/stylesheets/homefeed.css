@@ -3,12 +3,38 @@
 ================================================================ */
 .home--carousel {
   display: flex;
-  max-height: 210px;
-  gap: 5%;
+  /* max-height: 210px; */
+  gap: 1.25%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  padding-bottom: 20px;
+}
+.home--carousel::-webkit-scrollbar {
+  display: none;
 }
 .home--carousel-wrapper {
 }
+.carousel-wrper {
+  position: relative;
+}
+.carousel-btn-left,
+.carousel-btn-right {
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 100vh;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
 
+.carousel-btn-right {
+  right: 0;
+}
 .home--carousel-wrapper h3 {
   font-size: 1.125rem;
   margin-bottom: 0;
@@ -19,7 +45,8 @@
 }
 
 .home--carousel-itm {
-  width: 421px;
+  position: relative;
+  min-width: 30%;
   max-height: inherit;
   max-width: inherit;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);

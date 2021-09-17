@@ -1,18 +1,16 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from '../../actions/userActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMedal,
   faLemon,
+  faAngleRight,
   faRocket,
   faWindowRestore,
+  faAngleLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import cardOne from 'Images/card-1.webp';
-import cardTwo from 'Images/card-2.webp';
-import cardThree from 'Images/card-3.webp';
-import girl from 'Images/girl.jpg';
 
 const communityCards = [
   {
@@ -20,7 +18,13 @@ const communityCards = [
     icon: faMedal,
     title: "Editor's Choice",
     description: 'Photos selected by our Editors',
-    photos: [cardTwo, cardThree, girl, cardOne],
+    photos: [
+      'https://unsplash.com/photos/SavQfLRm4Do/download?force=true&w=640',
+      'https://unsplash.com/photos/U7JweiOQpHA/download?force=true&w=640',
+      'https://unsplash.com/photos/XQ66bEj72VE/download?force=true&w=640',
+      'https://unsplash.com/photos/Nqvm_d7jueg/download?force=true&w=640',
+      'https://unsplash.com/photos/RnCPiXixooY/download?force=true&w=640',
+    ],
     path: '/editors',
   },
   {
@@ -28,7 +32,13 @@ const communityCards = [
     icon: faWindowRestore,
     title: 'Featured Galleries',
     description: 'Best Galleries on 16 bites',
-    photos: [cardTwo, cardThree, girl, cardOne],
+    photos: [
+      'https://unsplash.com/photos/yihlaRCCvd4/download?force=true&w=640',
+      'https://unsplash.com/photos/jLXXCJtopss/download?force=true&w=640',
+      'https://unsplash.com/photos/Lv9M6Ddea_8/download?force=true&w=640',
+      'https://unsplash.com/photos/UWni0vqQotc/download?force=true&w=640',
+      'https://unsplash.com/photos/SFT9G3pAxLY/download?force=true&w=640',
+    ],
     path: '/galleries',
   },
   {
@@ -36,7 +46,13 @@ const communityCards = [
     icon: faRocket,
     title: 'Quests',
     description: 'Photo contests to challenges you',
-    photos: [cardTwo, cardThree, girl, cardOne],
+    photos: [
+      'https://unsplash.com/photos/jb6HWarT3ok/download?force=true&w=640',
+      'https://unsplash.com/photos/OHOU-5UVIYQ/download?force=true&w=640',
+      'https://unsplash.com/photos/UzOKDfoRrDU/download?force=true&w=640',
+      'https://unsplash.com/photos/5o9Cm6yBrhI/download?force=true&w=640',
+      'https://unsplash.com/photos/trYl7JYATH0/download?force=true&w=640',
+    ],
     path: '/quests',
   },
   {
@@ -44,23 +60,36 @@ const communityCards = [
     icon: faLemon,
     title: 'Resource Hub',
     description: 'Tools to grow your skills',
-    photos: [cardTwo, cardThree, girl, cardOne],
+    photos: [
+      'https://unsplash.com/photos/6lQDFGOB1iw/download?force=true&w=640',
+      'https://unsplash.com/photos/X_IvVDuHvDQ/download?force=true&w=640',
+      'https://unsplash.com/photos/UcfKYTan-LU/download?force=true&w=640',
+      'https://unsplash.com/photos/fbAnIjhrOL4/download?force=true&w=640',
+      'https://unsplash.com/photos/dL09wmeZGaI/download?force=true&w=640',
+    ],
     path: '/resources',
   },
 ];
 
 function Homefeed() {
   const dispatch = useDispatch();
+  const scrollRef = useRef(null);
   const users = useSelector((state) => state.users);
-  const users_array = Object.values(users);
+  const currUser = useSelector((state) => state.session.id);
+  const users_array = Object.values(users).filter(({ id }) => id !== currUser);
 
-  console.log({ users_array });
-  useLayoutEffect(() => {
+  useEffect(() => {
     dispatch(fetchUsers());
   }, []);
 
-  if (users_array.length === 0) return null;
+  const scrollLeft = () => {
+    scrollRef.current.scrollLeft -= 400;
+  };
+  const scrollRight = () => {
+    scrollRef.current.scrollLeft += 400;
+  };
 
+  // if (users_array.length === 0) return null;
   return (
     <div className='homefeed--container'>
       <div className='homefeed--container-pad '>
@@ -82,26 +111,38 @@ function Homefeed() {
             <h3>Featured photographers</h3>
             <p className='homefeed-txt--content'>Follow to explore new work </p>
           </div>
-          <div className='home--carousel'>
-            {users_array.map(({ id, posts, fname, lname }) => (
-              <div key={id} className='home--carousel-itm'>
-                <div className='img--wrapper'>
-                  {posts.slice(0, 4).map(({ id, photo }) => (
-                    <Link to={`/photos/${id}`} key={id}>
-                      <img src={photo} alt='card' />
+          <div className='carousel-wrper'>
+            <div className='home--carousel' ref={scrollRef}>
+              {users_array.map(({ id, posts, fname, lname }) => (
+                <div key={id} className='home--carousel-itm'>
+                  <div className='img--wrapper'>
+                    {posts.slice(0, 4).map(({ id, photo }) => (
+                      <Link to={`/photos/${id}`} key={id}>
+                        <img src={photo} alt='card' />
+                      </Link>
+                    ))}
+                  </div>
+                  <div className='home--carousel-txt-content'>
+                    <Link to={`/user/${id}`} className='nav--link item--links'>
+                      <div>
+                        {fname} {lname}
+                      </div>
                     </Link>
-                  ))}
+                    <button className='auth--btn'>Follow</button>
+                  </div>
                 </div>
-                <div className='home--carousel-txt-content'>
-                  <Link to={`/user/${id}`} className='nav--link item--links'>
-                    <div>
-                      {fname} {lname}
-                    </div>
-                  </Link>
-                  <button className='auth--btn'>Follow</button>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            {/* {scrollRef.current?.scrollLeft !== 0 && ( */}
+            <button className='carousel-btn-left' onClick={scrollLeft}>
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </button>
+            {/* )} */}
+            {/* {scrollRef.current?.scrollLeft !== scrollRef.current?.scrollLeftMax && ( */}
+            <button className='carousel-btn-right' onClick={scrollRight}>
+              <FontAwesomeIcon icon={faAngleRight} />
+            </button>
+            {/* )} */}
           </div>
         </section>
 

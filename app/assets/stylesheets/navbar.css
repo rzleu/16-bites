@@ -74,3 +74,23 @@ nav ul {
   background-color: rgb(255, 255, 255);
   fill: rgb(8, 112, 209);
 } */
+.navbar-ani-enter {
+  transform: scaleY(0.1);
+  transform-origin: top;
+  opacity: 0 !important;
+}
+.navbar-ani-enter-active {
+  transform: scaleY(1);
+  opacity: 1 !important;
+  transition: opacity 200ms, transform 200ms;
+}
+.navbar-ani-exit {
+  transform: scaleY(1);
+  transform-origin: top;
+  opacity: 1 !important;
+}
+.navbar-ani-exit-active {
+  opacity: 0 !important;
+  transform: scaleY(0);
+  transition: opacity 200ms, transform 200ms;
+}

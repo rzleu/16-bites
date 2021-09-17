@@ -29,3 +29,7 @@
   --lightPurple: #aeaeff;
   --negativeRed: #ff0033;
 }
+
+body {
+  scroll-behavior: smooth;
+}

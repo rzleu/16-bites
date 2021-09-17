@@ -9,23 +9,23 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   
-  has_many :followee_list,
+  has_many :follows,
     foreign_key: :followee_id,
     class_name: :Follow
 
-  has_many :follower_list,
-    foreign_key: :follower_id,
-    class_name: :Follow
-
-  has_many :followers, 
-    through: :follower_list,
-    source: :User,
-    dependent: :destroy
+  has_many :followers,
+    through: :follows,
+    source: :follower
 
   has_many :followees,
-    through: :followee_list,
-    source: :User,
-    dependent: :destroy
+    foreign_key: :follower_id,
+    class_name: :Follow
+  
+  has_many :following,
+    through: :followees,
+    source: :followee
+    
+
 
   def self.find_by_credentials(login, password)
     user = User.find_by(email: login) || User.find_by(username: login)

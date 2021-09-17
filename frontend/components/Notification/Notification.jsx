@@ -11,7 +11,6 @@ function Notification({ message }) {
     }
     return () => clearTimeout(clearNotification);
   }, []);
-  console.log({ message });
   return (
     <ul>
       {isOpen && (

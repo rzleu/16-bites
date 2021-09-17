@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchPosts } from '../../actions/postActions';
+import React, { useLayoutEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUsers } from '../../actions/userActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMedal,
@@ -12,25 +12,7 @@ import { Link } from 'react-router-dom';
 import cardOne from 'Images/card-1.webp';
 import cardTwo from 'Images/card-2.webp';
 import cardThree from 'Images/card-3.webp';
-import cardFour from 'Images/card-4.webp';
 import girl from 'Images/girl.jpg';
-
-const photos = [
-  {
-    id: 1,
-    photos: [cardTwo, cardThree, girl],
-    fullName: 'Tatiana Koshutina',
-    location: 'Екатеринбург, Свердловская об',
-    user_id: 2,
-  },
-  {
-    id: 2,
-    photos: [cardOne, cardFour],
-    fullName: 'Łukasz Wiatrowski',
-    location: 'Kraków',
-    user_id: 1,
-  },
-];
 
 const communityCards = [
   {
@@ -69,12 +51,15 @@ const communityCards = [
 
 function Homefeed() {
   const dispatch = useDispatch();
-  // const photos = useSelector((state) => state.posts);
-  useEffect(() => {
-    dispatch(fetchPosts());
-  }, [dispatch]);
+  const users = useSelector((state) => state.users);
+  const users_array = Object.values(users);
 
-  if (!photos || photos.length === 0) return null;
+  console.log({ users_array });
+  useLayoutEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
+
+  if (users_array.length === 0) return null;
 
   return (
     <div className='homefeed--container'>
@@ -97,21 +82,21 @@ function Homefeed() {
             <h3>Featured photographers</h3>
             <p className='homefeed-txt--content'>Follow to explore new work </p>
           </div>
-
           <div className='home--carousel'>
-            {photos.map(({ id, photos, fullName, location = '', user_id }) => (
+            {users_array.map(({ id, posts, fname, lname }) => (
               <div key={id} className='home--carousel-itm'>
                 <div className='img--wrapper'>
-                  {photos.map((url, i) => (
-                    <Link to={`/photos/${url.id}`} key={i}>
-                      <img src={url} alt='' />
+                  {posts.slice(0, 4).map(({ id, photo }) => (
+                    <Link to={`/photos/${id}`} key={id}>
+                      <img src={photo} alt='card' />
                     </Link>
                   ))}
                 </div>
                 <div className='home--carousel-txt-content'>
-                  <Link to={`/user/${user_id}`} className='nav--link item--links'>
-                    <div>{fullName}</div>
-                    <span>{location}</span>
+                  <Link to={`/user/${id}`} className='nav--link item--links'>
+                    <div>
+                      {fname} {lname}
+                    </div>
                   </Link>
                   <button className='auth--btn'>Follow</button>
                 </div>

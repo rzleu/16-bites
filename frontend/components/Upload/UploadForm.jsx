@@ -30,7 +30,8 @@ function UploadForm({
   resetPhoto = (e) => e,
   formType,
 }) {
-  const currUser = useSelector((state) => state.session);
+  const currUser = useSelector((state) => state.session.id);
+
   const [isDisabled, setIsDisabled] = useState(false);
   const dispatch = useDispatch();
   const [photoFields, setPhotoFields] = useState({
@@ -58,6 +59,16 @@ function UploadForm({
     }
   }, [formType, postFields]);
 
+  useEffect(() => {
+    let clearNotification;
+    if (notification) {
+      clearNotification = setTimeout(() => {
+        setNotification('');
+      }, 3000);
+    }
+    return () => clearTimeout(clearNotification);
+  });
+
   const handleChange = (label, val) => {
     setPhotoFields({ ...photoFields, [label]: val });
   };
@@ -73,13 +84,6 @@ function UploadForm({
   const updatePost = (e) => {
     e.preventDefault();
     const { photo, ...rest } = photoFields;
-    // PostAPiUtils.updatePost(rest).then(() =>
-    //   setNotification('Post Successfully Updated'),
-    // );
-    // dispatch(updatePostAction(rest)).then((what) => {
-    //   setNotification('Post Successfully Updated');
-    //   console.log(what);
-    // });
     updatePostAction(rest)(dispatch).then(() => {
       setNotification('Post Successfully Updated');
     });

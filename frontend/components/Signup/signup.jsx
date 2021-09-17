@@ -44,7 +44,7 @@ function Signup() {
     dispatch(
       login({
         login: 'demo_user@demo.com',
-        password: 'demodemodemo',
+        password: 'demo_password',
       }),
     );
     history.push('/');

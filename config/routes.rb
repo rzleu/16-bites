@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     get '/users/validate_email_uniqueness/', to: 'users#validate_email_uniqueness', as: 'validate_email_uniqueness'
     resources :posts, only: %i(show create index destroy update)
-    resources :users, only: %i(create show)
+    resources :users, only: %i(create show index)
     resource :session, only: %i(create destroy)
     resources :follows, only: %i( show create destroy)
   end

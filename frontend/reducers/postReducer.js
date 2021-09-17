@@ -19,8 +19,8 @@ const postReducer = (state = initialState, { type, payload }) => {
     case DELETE_POST:
       return {
         ...state,
-        allPosts: state.allPosts.filter(({ id }) => payload !== id),
-        userPosts: state.userPosts.filter(({ id }) => payload !== id),
+        allPosts: state.allPosts.filter(({ id }) => payload != id),
+        userPosts: state.userPosts.filter(({ id }) => payload != id),
       };
     default:
       return state;

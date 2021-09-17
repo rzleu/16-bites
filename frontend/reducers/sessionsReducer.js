@@ -1,9 +1,8 @@
-import {
-  RECEIVE_CURR_USER,
-  LOGOUT_CURR_USER,
-} from '../actions/sessionsActions';
+import { RECEIVE_CURR_USER, LOGOUT_CURR_USER } from '../actions/sessionsActions';
 
-const initialState = {};
+const initialState = {
+  id: '',
+};
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {

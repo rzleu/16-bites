@@ -282,17 +282,6 @@
   z-index: 2;
 }
 
-.splash--curve-yellow {
-  background: url('/assets/yellow-divider.svg');
-  background-position: right;
-  background-repeat: no-repeat;
-  bottom: -4%;
-  min-height: 400px;
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-}
-
 .img--large {
   max-width: 940px;
   max-height: 463px;

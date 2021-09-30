@@ -46,6 +46,19 @@ function Profile() {
     }
   };
 
+  const followBtn = () => {
+    if (currUser == id) return;
+    return isFollowing ? (
+      <button className='auth--btn' onClick={handleFollow}>
+        Unfollow
+      </button>
+    ) : (
+      <button className='auth--btn' onClick={handleFollow}>
+        Follow
+      </button>
+    );
+  };
+
   return (
     <div className='profile-wrap'>
       {id && (
@@ -58,15 +71,7 @@ function Profile() {
               {profileInfo.fname} {profileInfo.lname}
             </h2>
             <span>{profileInfo.lname}</span>
-            {isFollowing ? (
-              <button className='auth--btn' onClick={handleFollow}>
-                Unfollow
-              </button>
-            ) : (
-              <button className='auth--btn' onClick={handleFollow}>
-                Follow
-              </button>
-            )}
+            {followBtn()}
           </div>
           <div>
             <div>

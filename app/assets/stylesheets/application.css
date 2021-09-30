@@ -33,3 +33,7 @@
 body {
   scroll-behavior: smooth;
 }
+
+.disabled {
+  pointer-events: none;
+}

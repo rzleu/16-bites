@@ -10,38 +10,18 @@ import useOutsideClick from '../../hooks/useOutsideClick';
 
 const navLinks = [
   {
-    path: '/discover',
-    text: 'Discover',
+    path: 'https://github.com/rzleu',
+    text: 'Github',
   },
   {
-    path: '/licensing',
-    text: 'Licensing',
-  },
-  {
-    path: '/resource_hub',
-    text: 'Resource',
-  },
-  {
-    path: '/licensing/distributions',
-    text: 'Memberships',
-  },
-  {
-    path: '/quests',
-    text: 'Quests',
-  },
-  {
-    path: '/blog',
-    text: 'Blog',
+    path: 'https://www.linkedin.com/in/richardzleung/',
+    text: 'LinkedIn',
   },
 ];
 
 const loggedinLinks = [
   {
     text: 'Profile',
-  },
-  {
-    path: '/liked',
-    text: 'Liked photos',
   },
   {
     path: '/manage',
@@ -86,9 +66,9 @@ export default function Navbar() {
               </li>
               {navLinks.map(({ path, text }, i) => (
                 <li className='nav--item' key={i}>
-                  <Link className='nav--link' to={path} key={i}>
+                  <a className='nav--link' href={path} key={i} target='_blank'>
                     {text}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

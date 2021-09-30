@@ -203,7 +203,8 @@
 }
 .homefeed--card-photos img {
   object-fit: cover;
-  max-height: inherit;
+  height: 100%;
+  width: 100%;
 }
 .homefeed--card-item {
   box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 4px, rgba(0, 0, 0, 0.16) 0px 4px 12px;
@@ -239,4 +240,8 @@
   font-size: 0.65rem;
   color: var(--mediumGrey);
   margin-top: 5px;
+}
+
+.homefeed-img-wrapper:first-of-type {
+  grid-area: a;
 }

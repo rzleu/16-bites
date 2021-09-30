@@ -19,10 +19,10 @@ const communityCards = [
     title: "Editor's Choice",
     description: 'Photos selected by our Editors',
     photos: [
+      'https://unsplash.com/photos/4miBe6zg5r0/download?force=true&w=640',
       'https://unsplash.com/photos/SavQfLRm4Do/download?force=true&w=640',
       'https://unsplash.com/photos/U7JweiOQpHA/download?force=true&w=640',
       'https://unsplash.com/photos/XQ66bEj72VE/download?force=true&w=640',
-      'https://unsplash.com/photos/Nqvm_d7jueg/download?force=true&w=640',
       'https://unsplash.com/photos/RnCPiXixooY/download?force=true&w=640',
     ],
     path: '/editors',

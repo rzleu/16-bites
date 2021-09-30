@@ -141,7 +141,10 @@ function Root() {
                 you to share your work externally so you can build your own brand and
                 market yourself as a professional photographer.
               </p>
-              <Link to='/portfoliio' className='btn--reverse-color started--btn'>
+              <Link
+                to='/portfoliio'
+                className='btn--reverse-color started--btn disabled'
+              >
                 Get Started
               </Link>
 
@@ -165,7 +168,10 @@ function Root() {
                 to discover new areas of photography and grow your skills. Become a
                 Pro member to list your Resources in the Hub.
               </p>
-              <Link to='/portfolio' className='btn--reverse-color started--btn'>
+              <Link
+                to='/portfolio'
+                className='btn--reverse-color started--btn disabled'
+              >
                 View Resource Hub
               </Link>
 
@@ -220,7 +226,10 @@ function Root() {
                   prizes. We launch new Quests with unique themes every week so there
                   is always something for everyone!
                 </p>
-                <Link to='/portfolio' className='btn--reverse-color started--btn'>
+                <Link
+                  to='/portfolio'
+                  className='btn--reverse-color started--btn disabled'
+                >
                   View Quests
                 </Link>
               </div>
@@ -251,7 +260,7 @@ function Root() {
                 </p>
                 <Link
                   to='/licensing'
-                  className='btn--reverse-color started--btn'
+                  className='btn--reverse-color started--btn disabled'
                   style={{ position: 'relative', top: '20px' }}
                 >
                   Tell me more

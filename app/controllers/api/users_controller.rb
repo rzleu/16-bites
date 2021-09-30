@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
   def validate_email_uniqueness
     @user = User.find_by(email: params[:email])
     if @user
-      render json: ['Please use a different email. This email is already in use.'], status: :bad_request
+      render json: ['email is already in use'], status: :bad_request
     else
       render json: ['ok'], status: :ok
     end

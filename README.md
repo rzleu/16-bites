@@ -33,6 +33,7 @@
  - CSS3
  - Webpack
  - Git
+ - AWS
 
 # Future Plans
 

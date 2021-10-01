@@ -17,6 +17,10 @@ const navLinks = [
     path: 'https://www.linkedin.com/in/richardzleung/',
     text: 'LinkedIn',
   },
+  {
+    path: 'https://angel.co/u/richardzleung',
+    text: 'AngelList',
+  },
 ];
 
 const loggedinLinks = [

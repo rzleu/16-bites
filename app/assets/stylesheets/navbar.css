@@ -94,3 +94,7 @@ nav ul {
   transform: scaleY(0);
   transition: opacity 200ms, transform 200ms;
 }
+
+.logo--wrapper svg:hover path {
+  fill: var(--primaryBlueHover);
+}

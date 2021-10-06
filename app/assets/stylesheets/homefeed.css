@@ -5,8 +5,8 @@
   display: flex;
   /* max-height: 210px; */
   gap: 1.25%;
-  /* overflow-y: hidden;
-  overflow-x: scroll; */
+  /* overflow-y: hidden; */
+  overflow-x: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   padding-bottom: 20px;
@@ -93,7 +93,7 @@
 }
 .homefeed-home-btn::before {
   background-color: var(--primaryBlue);
-  content: '';
+  content: "";
   position: absolute;
   bottom: -8px;
   left: 0;
@@ -159,7 +159,7 @@
   border-top: 1px solid #d7d8db;
   height: 2px;
   width: 90vw;
-  content: '';
+  content: "";
   top: -20px;
   position: absolute;
 }
@@ -190,8 +190,8 @@
 .homefeed--card-photos {
   display: grid;
   grid-template-areas:
-    'a a b'
-    'c d d';
+    "a a b"
+    "c d d";
   width: 100%;
   overflow: clip;
   gap: 1%;

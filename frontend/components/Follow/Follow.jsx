@@ -8,7 +8,7 @@ function Follow({ id, className }) {
 
   useEffect(() => {
     showFollows(id).then(({ following, followers }) => {
-      console.log({ following, followers });
+      // console.log({ following, followers });
       if (following.some((list) => list.id == currUser)) {
         setIsFollowing(true);
       }
@@ -16,7 +16,7 @@ function Follow({ id, className }) {
   }, []);
   const handleFollow = () => {
     const obj = { followee_id: currUser, follower_id: id };
-    console.log({ obj });
+    // console.log({ obj });
     if (!isFollowing) {
       createFollow(obj).then(() => {
         setIsFollowing(true);
@@ -29,7 +29,7 @@ function Follow({ id, className }) {
   };
 
   const followBtn = () => {
-    console.log({ currUser, id });
+    // console.log({ currUser, id });
     if (currUser == id) return;
     return isFollowing ? (
       <button className={`auth--btn ${className}`} onClick={handleFollow}>

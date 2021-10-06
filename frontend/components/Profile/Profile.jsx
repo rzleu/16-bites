@@ -46,7 +46,7 @@ function Profile() {
 
   const handleFollow = () => {
     const obj = { follower_id: currUser, followee_id: id };
-    console.log({ obj });
+    // console.log({ obj });
     if (!isFollowing) {
       createFollow(obj).then(() => {
         setIsFollowing(true);

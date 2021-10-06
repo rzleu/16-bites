@@ -11,6 +11,7 @@ import {
   faAngleLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import Follow from '../Follow'
 
 const communityCards = [
   {
@@ -128,7 +129,7 @@ function Homefeed() {
                         {fname} {lname}
                       </div>
                     </Link>
-                    <button className='auth--btn'>Follow</button>
+                    <Follow id={id} />
                   </div>
                 </div>
               ))}

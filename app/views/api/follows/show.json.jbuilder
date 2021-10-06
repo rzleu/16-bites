@@ -1,3 +1,2 @@
-json.array! @follows do |follow|
-  json.extract! follow, :id, :followee_id, :follower_id
-end
+json.following @following, :id, :username, :fname, :lname
+json.followers @followers, :id, :username, :fname, :lname

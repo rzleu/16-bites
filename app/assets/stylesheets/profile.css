@@ -38,7 +38,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   inset: 0;
-  content: '';
+  content: "";
   transition: all 300ms ease-in;
   z-index: 1;
   opacity: 0;
@@ -77,4 +77,53 @@
 
 .profile-img-wrapper > h2 {
   white-space: nowrap;
+}
+
+.darken--bg {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  inset: 0;
+  z-index: 100000;
+}
+
+.darken--bg > div {
+  height: calc(50% + 50px);
+  position: absolute;
+  width: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-x: crop;
+  overflow-y: scroll;
+  background-color: var(--white);
+  padding: 3%;
+  border-radius: 10px;
+}
+
+.darken--bg > div > h3 {
+  text-align: center;
+  margin: 0 0 5% 0;
+}
+
+.follows--modal {
+  position: relative;
+}
+
+.follows--modal > button {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  background-color: var(--mediumGrey);
+  border-radius: 100vh;
+}
+
+.list--btn {
+  width: 124px;
+  height: 32px;
+  padding: 0;
+}
+
+.list--container {
+  display: flex;
+  justify-content: space-between;
 }

@@ -18,7 +18,8 @@ class Api::FollowsController < ApplicationController
     end
 
     def show
-      @follows = Follow.where(:followee_id => params[:id])
+      @following = User.find(params[:id]).following
+      @followers = User.find(params[:id]).followers
       render :show
     end
 

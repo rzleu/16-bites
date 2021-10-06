@@ -1,5 +1,5 @@
 .editor--view {
-  width: 60%;
+  width: 90%;
   max-height: 620px;
   display: flex;
   flex-wrap: wrap;
@@ -12,4 +12,10 @@
   /* width: 100%; */
   /* max-height: 100%; */
   max-height: 294px;
+}
+
+@media screen and (max-width: 992px) {
+  .editor--view {
+    width: 60%;
+  }
 }

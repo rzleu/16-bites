@@ -95,10 +95,10 @@
 }
 
 .splash--header--secondary {
-  grid-column: 20 / 33;
+  grid-column: 1 / 51;
   grid-row: 8 / 10;
   font-size: 2.35rem;
-  margin-top: -3px;
+  margin: -2% auto 1rem;
 }
 
 .splash--section-two {
@@ -280,9 +280,23 @@
   grid-row: 12 / 40;
   position: relative;
   z-index: 2;
+  margin-top: 100px;
 }
 
 .img--large {
   max-width: 940px;
   max-height: 463px;
+}
+
+@media screen and (max-width: 1600px) {
+  .root--title, .root--para, .root--sign-up {
+    grid-column: 4/28;
+  }
+  .root--para {
+    margin-top: -5%;
+  }
+
+  .root--para + a {
+    margin-top: -10%;
+  }
 }

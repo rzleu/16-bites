@@ -5,8 +5,8 @@
   display: flex;
   /* max-height: 210px; */
   gap: 1.25%;
-  overflow-y: hidden;
-  overflow-x: scroll;
+  /* overflow-y: hidden;
+  overflow-x: scroll; */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   padding-bottom: 20px;

@@ -1,9 +1,11 @@
 .card--wrapper {
   display: flex;
-
+  overflow-x: clip;
   max-height: 400px;
   gap: 0.75rem;
   margin-bottom: 2rem;
+  width: calc(100% - 100px);
+  justify-content: center;
 }
 
 .img--wrapper {

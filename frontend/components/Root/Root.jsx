@@ -197,12 +197,12 @@ function Root() {
                   footerTitle='literal_monkey_monk'
                 />
 
-                <Card
+                {/* <Card
                   image={window.cardFour}
                   title='Great Big Photography World Pod...'
                   tags={['Podcast', 'Online', 'Free']}
                   footerTitle='checkin_man'
-                />
+                /> */}
               </div>
             </div>
           </>

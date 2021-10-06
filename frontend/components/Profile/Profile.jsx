@@ -34,7 +34,7 @@ function Profile() {
     });
 
     showFollows(parseInt(id)).then(({ following, followers }) => {
-      if (following.some((list) => list.id == currUser)) {
+      if (followers.some((list) => list.id == currUser)) {
         setIsFollowing(true);
       }
       setFollowInfo({
@@ -46,7 +46,7 @@ function Profile() {
 
   const handleFollow = () => {
     const obj = { follower_id: currUser, followee_id: id };
-
+    console.log({ obj });
     if (!isFollowing) {
       createFollow(obj).then(() => {
         setIsFollowing(true);

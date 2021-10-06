@@ -14,10 +14,9 @@ function Follow({ id, className }) {
       }
     });
   }, []);
-
   const handleFollow = () => {
-    const obj = { follower_id: currUser, followee_id: id };
-
+    const obj = { followee_id: currUser, follower_id: id };
+    console.log({ obj });
     if (!isFollowing) {
       createFollow(obj).then(() => {
         setIsFollowing(true);

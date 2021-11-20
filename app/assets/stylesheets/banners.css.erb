@@ -23,7 +23,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(<%= asset_path 'splash.webp' %>);
   background-size: cover;
   background-position: center center;
-  max-height: 85vh;
+  max-height: 65vh;
   width: 100%;
   position: relative;
 }
@@ -37,4 +37,10 @@
   width: 100%;
   position: absolute;
   z-index: -1;
+}
+
+@media screen and (max-width: 992px) {
+  .background {
+    max-height: 85vh;
+  }
 }
